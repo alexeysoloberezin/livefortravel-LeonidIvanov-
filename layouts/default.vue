@@ -89,9 +89,9 @@
       </div>
     </div>
 
-<!--    <v-main :style="{marginTop: !whiteHeader ? '60px' : ''}">-->
-<!--      <Nuxt/>-->
-<!--    </v-main>-->
+    <v-main :style="{marginTop: !whiteHeader ? '60px' : ''}">
+      <Nuxt/>
+    </v-main>
 
     <div
       class="px-0 py-4 footer mt-16"
