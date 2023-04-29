@@ -22,6 +22,12 @@ body, input, input::placeholder, a, .v-application {
     opacity: 0.5;
   }
 }
+
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .modal{
   position: fixed;
   top: 0;
