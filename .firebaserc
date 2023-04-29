@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "vue-main-42e70"
+  },
+  "targets": {
+    "vue-main-42e70": {
+      "hosting": {
+        "vue-main": [
+          "vue-main042e70"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
