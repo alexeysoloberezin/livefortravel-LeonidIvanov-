@@ -41,7 +41,7 @@
 
       </div>
 
-      <div v-show="openFilter" class="housesFilters px-5">
+      <div v-show="openFilter" class="housesFilters px-2 px-md-5">
         <div class="dates">
           <label>{{ $t('dates') }}</label>
           <input id="input-id" type="text"/>

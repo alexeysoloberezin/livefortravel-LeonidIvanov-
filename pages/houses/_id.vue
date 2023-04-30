@@ -43,9 +43,9 @@
                  :key="img + index"><img
               :src="img" alt=""></div>
           </div>
-          <div class="mainHouse-images-allPhotos whiteBtn activeHover">
-            All photos
-          </div>
+<!--          <div class="mainHouse-images-allPhotos whiteBtn activeHover">-->
+<!--            All photos-->
+<!--          </div>-->
         </div>
 
 
@@ -534,4 +534,22 @@ export default {
   }
 }
 
+@media (max-width: 1260px) {
+  .mainHouse-images{
+    grid-template-columns: 1fr;
+  }
+  .mainHouse-stick{
+    flex-direction: column;
+    &-right{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .mainHouse-stick{
+    &-right{
+      padding: 10px;
+    }
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="`priceBox ${small ? 'small' : ''}`" :key="rerender">
+  <div :class="`priceBox ${smallVal ? 'small' : ''}`" :key="rerender">
     <div v-if="finalPrice.monthlyX1" class="priceBox-item">
       <span>{{ $t('month') }}</span>
       <span>{{ calcPrice(finalPrice.monthlyX1) }} {{ currency }} <span>/ {{ $t('month') }}</span></span>
@@ -71,6 +71,13 @@ export default {
     }
   },
   computed: {
+    smallVal(){
+      if(window.innerWidth < 500){
+        return true
+      }
+
+      return this.small
+    },
     currencyValue(){
       return this.$store.state.currencyValue
     },

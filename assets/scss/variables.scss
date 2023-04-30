@@ -512,7 +512,46 @@ h1 {
     grid-template-columns: 1fr ;
   }
 }
-
+@media (max-width: 730px) {
+  .price .v-input__slider{
+    display: grid;
+    grid-template-columns: 1fr;
+    border: none;
+    border-radius: 10px;
+    height: initial;
+  }
+  .price .v-input__prepend-outer, .price .v-input__append-outer{
+    border: 1px solid  #eaeaea;
+    height: 45px;
+    border-radius: 50px;
+    margin: 0 !important;
+    padding-left: 15px;
+  }
+  .housesFilters .v-input__append-outer .v-input, .housesFilters .v-input__prepend-outer .v-input{
+    padding: 0;
+  }
+  .v-application--is-ltr .v-input__prepend-outer{
+    margin-left: 9px;
+  }
+  .housesFilters{
+    margin-top: 5px !important;
+    &>div{
+      width: 100%;
+    }
+    label{
+      margin-top: 10px;
+      display: block;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .datepicker{
+    width: 100% !important;
+  }
+  h1{
+    font-size: 1.5em;
+  }
+}
 .modalImages .v-carousel__content {
   display: flex;
   justify-content: center;

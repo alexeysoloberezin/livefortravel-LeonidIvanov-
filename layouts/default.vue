@@ -186,16 +186,16 @@ export default {
 
   },
   mounted() {
-    // this.setFavoriteCount()
-    // this.$store.dispatch('contacts/fetchContacts')
-    //
-    // if (this.$store.state.currency === 'USDT') {
-    //   console.log('GET USDT def')
-    //   this.$store.dispatch('fetchCurrencyUSDTIDR')
-    // } else if (this.$store.state.currency === 'RUB') {
-    //   console.log('GET RUB def')
-    //   this.$store.dispatch('fetchCurrencyRubIdr')
-    // }
+    this.setFavoriteCount()
+    this.$store.dispatch('contacts/fetchContacts')
+
+    if (this.$store.state.currency === 'USDT') {
+      console.log('GET USDT def')
+      this.$store.dispatch('fetchCurrencyUSDTIDR')
+    } else if (this.$store.state.currency === 'RUB') {
+      console.log('GET RUB def')
+      this.$store.dispatch('fetchCurrencyRubIdr')
+    }
   },
   computed: {
     whiteHeader() {

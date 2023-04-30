@@ -206,6 +206,7 @@ export default {
       position: absolute;
       top: 5px;
       left: 5px;
+      border-radius: 8px;
       width: calc(100% - 10px);
       height: calc(100% - 10px);
       background: #fff;
@@ -229,7 +230,7 @@ export default {
           $green 22.5px,
           $green 30px);
       transform: translateX(-20%) translateY(-20%) rotate(-45deg);
-      animation: animate 20s linear infinite;
+      animation: animate 15s linear infinite;
     }
   }
 
@@ -286,6 +287,7 @@ export default {
     height: 100%;
     border-radius: 8px 8px 0 0;
     width: 100%;
+    min-height: 250px;
     object-fit: cover;
     display: block;
   }
@@ -293,6 +295,7 @@ export default {
   &-img {
     position: relative;
     z-index: 3;
+    min-height: 250px;
     height: 430px;
   }
 
