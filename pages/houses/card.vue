@@ -1,5 +1,5 @@
 <template>
-  <div class="" :class="`cardHouse glass ${vertical ? 'houseHot' : ''}`">
+  <div class="" :class="`cardHouse glass ${house.info.hot ? 'houseHot' : ''}`">
     <div class="cardHouse-img">
       <img :src="house.info.img[0] || 'housePlaceholder.jpg'" alt="">
       <div class="cardHouse-favorite">
@@ -147,6 +147,18 @@ export default {
     transform: translateX(100%);
   }
 }
+
+
+@keyframes animate {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 0 450px;
+  }
+}
+
 .cardHouse {
   position: relative;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
@@ -156,28 +168,68 @@ export default {
   flex-grow: 1;
   height: 100%;
 
+  overflow: hidden;
+  &-leftTopTags{
+    z-index: 7;
+  }
+
+
   &.houseHot {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+    padding: 5px;
 
-    .cardHouse-img {
-      width: 65%;
-      //margin: 6px;
-      flex-shrink: 0;
-      border-radius: 8px 0 0 8px;
-    }
+    //display: flex;
+    //flex-direction: row;
+    //height: 100%;
+    //
+    //.cardHouse-img {
+    //  width: 65%;
+    //  //margin: 6px;
+    //  height: 100%;
+    //  flex-shrink: 0;
+    //  border-radius: 8px 0 0 8px;
+    //}
+    //
+    //.cardHouse-btn {
+    //  display: none;
+    //}
+    //.cardHouse-info{
+    //  position: relative;
+    //  z-index: 5;
+    //}
+    //
+    //.cardHouse-price {
+    //  padding-top: 25px;
+    //}
 
-    .cardHouse-btn {
-      display: none;
+    &:after{
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      background: #fff;
+      z-index: 1;
     }
-    .cardHouse-info{
-      position: relative;
-      z-index: 5;
-    }
-
-    .cardHouse-price {
-      padding-top: 25px;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 250%;
+      height: 250%;
+      z-index: 0;
+      $green: rgb(116, 245, 157);
+      $sec: rgb(37, 218, 95);
+      background: repeating-linear-gradient(
+          $sec 0%,
+          $sec 7.5px,
+          $green 7.5px,
+          $green 15px,
+          $sec 15px,
+          $sec 22.5px,
+          $green 22.5px,
+          $green 30px);
+      transform: translateX(-20%) translateY(-20%) rotate(-45deg);
+      animation: animate 20s linear infinite;
     }
   }
 
@@ -201,6 +253,8 @@ export default {
 
   &-info {
     padding: 20px;
+    position: relative;
+    z-index: 5;
   }
 
   cursor: pointer;
@@ -238,12 +292,15 @@ export default {
 
   &-img {
     position: relative;
+    z-index: 3;
+    height: 430px;
   }
 
   &-favorite {
     position: absolute;
     top: 5px;
     right: 5px;
+    z-index: 10;
     background: rgba(255, 255, 255, 0.4);
     padding: 3px 2px 0 1px;
     border-radius: 50%;
@@ -263,16 +320,23 @@ export default {
     justify-content: center;
     margin-top: -25px;
     flex-shrink: 0;
+    margin-bottom: -15px;
     position: relative;
     margin-left: auto;
     margin-right: 30px;
-    z-index: 2;
+    z-index: 10;
     box-shadow: 0 0 3px 3px rgba(89, 206, 143, 0.26);
 
     svg {
       fill: #fff;
       width: 32px;
       height: 32px;
+    }
+  }
+
+  @media (max-width: 730px) {
+    &-img{
+      height: initial;
     }
   }
 }

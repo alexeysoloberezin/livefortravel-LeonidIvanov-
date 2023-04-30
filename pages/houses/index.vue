@@ -24,41 +24,48 @@
             >
           </div>
         </div>
-      </div>
-      <div class="d-flex align-center justify-end mx-auto mt-4 cursor-pointer " style="max-width: 1000px;"
-           @click="openFilter = !openFilter">
-        <div class="mainBtn">
-          <svg class="mr-2" width="23" height="23" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
-            filter-menu-outline</title>
-            <path
-              d="M12 18.88A1 1 0 0 1 11.71 19.71A1 1 0 0 1 10.3 19.71L6.3 15.71A1 1 0 0 1 6 14.87V9.75L1.21 3.62A1 1 0 0 1 1.38 2.22A1 1 0 0 1 2 2H16A1 1 0 0 1 16.62 2.22A1 1 0 0 1 16.79 3.62L12 9.75V18.88M4 4L8 9.06V14.58L10 16.58V9.05L14 4M13 16L18 21L23 16Z"/>
-          </svg>
-          {{ $t('filters') }}
+        <div class="d-flex align-center justify-end " style="max-width: 1000px;" >
+          <div class="d-flex align-center mr-3">
+            <v-checkbox v-model="avalibleTag"></v-checkbox>
+            <label>{{ $t('ShowavalibleNow') }}</label>
+          </div>
+          <div class="mainBtn cursor-pointer" @click="openFilter = !openFilter">
+            <svg class="mr-2" width="23" height="23" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
+              filter-menu-outline</title>
+              <path
+                d="M12 18.88A1 1 0 0 1 11.71 19.71A1 1 0 0 1 10.3 19.71L6.3 15.71A1 1 0 0 1 6 14.87V9.75L1.21 3.62A1 1 0 0 1 1.38 2.22A1 1 0 0 1 2 2H16A1 1 0 0 1 16.62 2.22A1 1 0 0 1 16.79 3.62L12 9.75V18.88M4 4L8 9.06V14.58L10 16.58V9.05L14 4M13 16L18 21L23 16Z"/>
+            </svg>
+            {{ $t('filters') }}
+          </div>
         </div>
+
       </div>
-      <div v-show="openFilter" class="housesFilters">
+
+      <div v-show="openFilter" class="housesFilters px-5">
         <div class="dates">
           <label>{{ $t('dates') }}</label>
           <input id="input-id" type="text"/>
-          <div v-if="selectedDate" class="dates-cross" @click="clickRemoveDate"><CrossIcon /></div>
+          <div v-if="selectedDate" class="dates-cross" @click="clickRemoveDate">
+            <CrossIcon/>
+          </div>
         </div>
         <div class="rooms">
-          <label>{{ $t('rooms') }}</label>
+          <label>{{ $t('roomsWorld') }}</label>
           <v-select
             :items="['-', 1, 2,3,4]"
             v-model="roomsFilter"
           ></v-select>
         </div>
-        <div class="chips">
-          <label>{{ $t('tabs') }}</label>
-          {{ chipsValue }}
-          <v-select
-            v-model="chipsValue"
-            :items="chipsItems"
-            chips
-            multiple
-          ></v-select>
-        </div>
+        <!--        <div class="chips">-->
+        <!--          <label>{{ $t('tabs') }}</label>-->
+        <!--          {{ chipsValue }}-->
+        <!--          <v-select-->
+        <!--            v-model="chipsValue"-->
+        <!--            :items="chipsItems"-->
+        <!--            chips-->
+        <!--            multiple-->
+        <!--          ></v-select>-->
+        <!--        </div>-->
 
         <div class="price">
           <label>{{ $t('pricePerMonth') }}</label>
@@ -141,11 +148,11 @@
         </div>
       </template>
       <div v-else>
-        <div v-if="houses.length > 0" class="grid-cards" :style="{gridTemplateColumns: this.grid}">
+        <div v-if="houses.length > 0" class="grid-cards" >
 
           <router-link :to="`${$route.path}/` + house.info.id" v-for="(house, index) in houses" :key="index"
                        v-show="!isDateInRange(house.customerRentPrice[house.customerRentPrice.length - 1].nextPayment) || !selectedDate">
-            <CardHouse :house="house" :vertical="index === 0"/>
+            <CardHouse :house="house" :vertical="index === 0 || index === 3"/>
           </router-link>
         </div>
       </div>
@@ -177,8 +184,8 @@ export default {
 
       roomsFilter: '-',
       openFilter: false,
+      avalibleTag: false,
       value: 0,
-      grid: '1fr 1fr 1fr 1fr',
       date: null,
       range: [0, 40000000],
       chipsItems: ['tv', 'parking', 'kitchen', 'fridge', 'garden'],
@@ -194,7 +201,7 @@ export default {
   },
 
   methods: {
-    clickRemoveDate(){
+    clickRemoveDate() {
       this.datepicker.clear()
       this.selectedDate = null
     },
@@ -234,16 +241,16 @@ export default {
     this.datepicker = new HotelDatepicker(input, {
       onSelectRange() {
         th.selectedDate = this.getValue()
-        },
+      },
       format: 'MM/DD/YYYY',
       minNights: 30,
     })
   },
   computed: {
-    currency(){
+    currency() {
       return this.$store.state.currency
     },
-    currencyValue(){
+    currencyValue() {
       return this.$store.state.currencyValue
     },
     loading() {
@@ -266,14 +273,23 @@ export default {
 
       const searchTerm = this.search.toLowerCase()
 
-      res = res.filter(house =>  house.info.price.monthlyX1 <= this.range[1] && house.info.price.monthlyX1 >= this.range[0])
+      res = res.filter(house => house.info.price.monthlyX1 <= this.range[1] && house.info.price.monthlyX1 >= this.range[0])
 
-      if(this.roomsFilter !== '-'){
-        res = res.filter(house =>  house.info.rooms === this.roomsFilter)
+      if (this.roomsFilter !== '-') {
+        res = res.filter(house => house.info.rooms === this.roomsFilter)
       }
-      if(this.chipsValue.length > 0){
+      if (this.chipsValue.length > 0) {
         res = res.filter(house => {
           return this.chipsValue.some(chip => house[chip])
+        })
+      }
+
+      console.log()
+      if (this.avalibleTag) {
+        res = res.filter(house => {
+          const date = this.$moment(house.customerRentPrice[house.customerRentPrice.length - 1].nextPayment, 'MM/DD/YYYY')
+
+          return date.isBefore(this.$moment());
         })
       }
 
@@ -297,22 +313,26 @@ export default {
 }
 
 .housesFilters {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
   margin: 30px auto;
   grid-gap: 16px;
-
+  width: 100%;
+  &>div{
+    flex-grow: 1;
+  }
   .dates {
     position: relative;
+    flex-grow: 2;
     //width: 100%;
-    .dates-cross{
+    .dates-cross {
       position: absolute;
       bottom: 10px;
       right: 15px;
       cursor: pointer;
       z-index: 15;
     }
+
     & > input {
       height: 50px;
       width: 100%;
@@ -324,9 +344,11 @@ export default {
 
   .price {
     grid-column: 1/4;
+    flex-grow: 6;
   }
 
   .rooms {
+    flex-grow: 1;
     //width: calc(50% - 8px);
   }
 }
@@ -334,16 +356,30 @@ export default {
 .housesSearch {
   background: rgba(247, 247, 255, 0.56);
   border-radius: 50px;
+  height: 50px;
+  width: calc(100% - 300px);
   display: grid;
   grid-template-columns: 50px 1fr;
   margin-top: 10px;
 
+  @media (max-width: 750px) {
+    width: 100%;
+    &-wrp{
+      padding: 0 10px !important;
+    }
+  }
+
   &-wrp {
-    max-width: 1000px;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 
     h3 {
       margin-bottom: 10px;
+      width: 100%;
 
       display: block;
     }
@@ -402,7 +438,11 @@ export default {
 }
 
 .houses {
-  padding: 0 40px;
+  padding: 0 15px;
+
+  @media (min-width: 1100px) {
+    padding: 0 40px;
+  }
 }
 
 </style>

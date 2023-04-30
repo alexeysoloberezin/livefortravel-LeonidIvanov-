@@ -3,7 +3,6 @@
     <v-btn @click="sendHouse">SEND HOUSE</v-btn>
     <pre>{{ house }}</pre>
 
-
     <div style="margin: 50px">
       <v-card>
         <h5>customerRent</h5>
@@ -250,38 +249,52 @@ export default {
 
       house: {
         info: {
-          id: 5,
-          name: 'Ari House 2BD',
-          location: 'Center Bukit',
+          id: 6,
+          name: 'Q11 in Jimbaran 2BD',
+          location: 'Jimbaran',
           locationMiniImg: 'Screenshot_7.png',
           rooms: 2,
-          bethRooms: 3,
+          bethRooms: 2,
           kitchen: true,
-          tv: false,
-          ac: 2,
+          tv: true,
+          ac: 3,
           parking: true,
           fridge: true,
           workTable: true,
-          garden: true,
-          distanceToTheBeach: null,
+          garden: false,
+          distanceToTheBeach: '3 min',
           price: {
-            monthlyX1: 19000000,
-            monthlyX2: 17000000,
-            monthlyX3: 15000000,
+            monthlyX1: 17000000,
+            monthlyX2: 15000000,
+            monthlyX3: 14000000,
             yearly: null,
             week: null,
-            daily: 750000,
+            daily: 650000,
           },
-          description: ``,
+          description: `Букит, джимбаран .<br>
+          3 мин пляж на байке. Cветлый дом, не в балийском стиле, .<br>
+          2 комнаты, в каждой санузел. Одна комната, чуть меньше другой. .<br>
+          Из удобств: .<br>
+              - Холодильник.<br>
+              - Микроволновка .<br>
+              - Телевизор.<br>
+              - Рабочее место.<br>
+              - Большой диван.<br>
+              - Духовка.<br>
+          Уборка, вайфай включены. Электричество оплачивается отдельно . 500-700 в месяц .`,
           hot: false,
           img: [
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_7_2023-04-25_18-43-37.jpg?alt=media&token=3d39832a-4bb0-4716-8c84-ad1e7ef2a156',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_8_2023-04-25_18-43-37.jpg?alt=media&token=19beb2de-a9ea-4330-b17f-c1ed57d45a3a',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_3_2023-04-25_18-43-37.jpg?alt=media&token=ffa0f683-043a-4539-8c59-738b1eed3cf1',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2FIMG_0601.jpeg?alt=media&token=535b1e83-711d-47a2-b437-3715abb4e57d',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_10_2023-04-25_18-43-37.jpg?alt=media&token=f9d23ab6-f479-4fef-a7b7-dd1a2a622e35',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_2_2023-04-25_18-43-37.jpg?alt=media&token=7198655f-01b1-45f5-ae75-56c8d84b4df4',
-            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/Ari%2Fphoto_6_2023-04-25_18-43-37.jpg?alt=media&token=0f53f931-7ecd-44d6-9e69-7543ee1a343e',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_2023-04-27_18-15-47.jpg?alt=media&token=34c2e22d-ca5c-45dc-b341-c309afcdaa82',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_11_2023-04-30_09-54-17.jpg?alt=media&token=ca2b7f08-1395-4a1a-b374-5a599dffbbab',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_3_2023-04-30_09-52-44.jpg?alt=media&token=8aa87053-1c8c-420e-96f2-e32cebf53c7f',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_4_2023-04-30_09-54-17.jpg?alt=media&token=3da7f4c1-52b3-4281-900e-a9bf45d5a46b',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_7_2023-04-30_09-54-17.jpg?alt=media&token=4cd491c9-72b7-4267-a3bc-57b883bfe8f8',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_10_2023-04-30_09-54-17.jpg?alt=media&token=9f8da4a2-8ce7-47b9-96c6-5a6c3660a43f',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_13_2023-04-30_09-54-17.jpg?alt=media&token=fd99acb1-e7da-4e76-89e3-dc88f471942c',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_14_2023-04-30_09-54-17.jpg?alt=media&token=8521fb4d-5514-4920-9ea7-66e92ac511fd',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_1_2023-04-30_09-54-17.jpg?alt=media&token=46239e94-c96f-47ff-9d7b-96f4ee5cdb37',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_2_2023-04-30_09-54-17.jpg?alt=media&token=fb9f0e33-7678-4daa-9809-eaaaba787868',
+            'https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/q11%2Fphoto_6_2023-04-30_09-54-17.jpg?alt=media&token=eb17c15c-fc71-47cd-ac70-bebb948ccb7a',
           ],
         },
         rentPrice: {
@@ -294,11 +307,21 @@ export default {
         },
         customerRentPrice: [
           {
-            name: 'Anatoliy',
+            name: 'Filip',
             contacts: [],
             startRent: '02/18/2023',
             nextPayment: '04/18/2023',
             totalPrice: 34000000,
+            cleaning: true,
+            internet: true,
+            light: 0,
+          },
+          {
+            name: 'Denis',
+            contacts: [],
+            startRent: '03/10/2023',
+            nextPayment: '05/10/2023',
+            totalPrice: 0,
             cleaning: true,
             internet: true,
             light: 0,

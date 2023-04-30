@@ -246,6 +246,11 @@ export default {
     font-weight: 500;
   }
 }
+@media (max-width: 750px) {
+  .nav{
+    display: none;
+  }
+}
 
 .logo {
   margin-top: 10px;
