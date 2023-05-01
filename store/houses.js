@@ -12,7 +12,6 @@ export const mutations = {
     state.favoriteCount = value
   },
   refreshHouses(state, value) {
-    console.log('refresh HOuses!!!')
     state.houses = JSON.parse(JSON.stringify(state.houses))
   },
   setHousesLoading(state, value) {

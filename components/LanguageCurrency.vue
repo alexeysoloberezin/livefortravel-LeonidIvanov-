@@ -54,7 +54,6 @@ export default {
   },
   watch: {
     currency(){
-      console.log(this.$store.state.currencyValue, this.currency)
       this.getPrice()
     }
   },

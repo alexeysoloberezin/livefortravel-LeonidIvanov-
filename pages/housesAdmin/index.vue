@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     clickTooltip(key){
-      console.log(key)
       this.grid = key
     }
   },

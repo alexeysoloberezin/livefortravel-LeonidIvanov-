@@ -104,13 +104,11 @@ export default {
         currentDate = currentDate.add(1, 'day') // увеличиваем текущую дату на один день
       }
     })
-    console.log(allDates) // выводим массив всех дат между начальной и конечной датами
     this.highlighted.dates = allDates
   },
   methods: {
     changeDate(date) {
       const myDate = this.$moment(date, "ddd MMM DD YYYY HH:mm:ss [GMT]ZZ")
-      console.log(myDate)
 
       return myDate.format('L')
     },

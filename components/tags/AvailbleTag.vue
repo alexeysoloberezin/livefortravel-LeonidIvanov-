@@ -22,12 +22,8 @@ export default {
       const date = this.$moment(nextPayment, 'MM/DD/YYYY')
 
       if (date.isBefore(this.$moment())) {
-        console.log(`Дата ${nextPayment} уже прошла`)
-
         return 'Available'
       } else {
-        console.log(`Дата ${nextPayment} еще не наступила`)
-
         return 'Rented'
       }
     }

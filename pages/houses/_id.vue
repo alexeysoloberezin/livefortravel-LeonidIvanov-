@@ -43,9 +43,6 @@
                  :key="img + index"><img
               :src="img" alt=""></div>
           </div>
-<!--          <div class="mainHouse-images-allPhotos whiteBtn activeHover">-->
-<!--            All photos-->
-<!--          </div>-->
         </div>
 
 
@@ -112,16 +109,6 @@
               </div>
 
             </div>
-            <!--          <div class="mainHouse-block">-->
-
-            <!--            <HotelDatePicker-->
-            <!--              :endDate="new Date(new Date().getFullYear(), 11, 31)"-->
-            <!--              :minNights='3'-->
-            <!--              alwaysVisible-->
-            <!--              :enableCheckout="true"-->
-            <!--            ></HotelDatePicker>-->
-            <!--          </div>-->
-
             <div class="map" v-if="getHouse.info.locationPoint">
               <h5 class="py-5 mt-2">Location</h5>
               <iframe :src="getHouse.info.locationPoint" width="600" height="450" style="border:0;" allowfullscreen=""
@@ -277,7 +264,6 @@ export default {
     calculatePrice(price) {
       if (!this.dateObj?.days && !this.dateObj?.months) return ''
 
-      console.log(this.dateObj, price)
       let res = 0
 
       if (this.dateObj?.months >= 3) {

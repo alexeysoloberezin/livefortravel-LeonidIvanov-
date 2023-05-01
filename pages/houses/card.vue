@@ -83,11 +83,6 @@ export default {
       refreshPrice: 0
     }
   },
-  watch: {
-    currencyValue() {
-      console.log('1231231', this.currencyValue)
-    }
-  },
   computed: {
     hotPrice() {
       if (this.house.info.hotPrice) {

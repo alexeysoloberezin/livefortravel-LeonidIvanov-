@@ -6,21 +6,18 @@ export default  function addFavoriteHouse(favorites, store) {
 
     // если массив "favorite" еще не был создан, создаем новый массив и добавляем значения
     if (!currentFavorites || JSON.parse(currentFavorites).length === 0) {
-      console.log('empty')
       const favoritesArray = [favorites]
       localStorage.setItem("favorite", JSON.stringify(favoritesArray))
     } else { // если массив "favorite" уже существует, добавляем значения к текущему массиву
       let favoritesArray = JSON.parse(currentFavorites)
 
       const find = favoritesArray.filter(item => item === favorites)
-      console.log(favoritesArray, favorites, find)
 
       if(find && find.length !== 0){
         favoritesArray = favoritesArray.filter(item => item !== favorites)
       }else{
         favoritesArray.push(favorites)
       }
-      console.log('add' , favoritesArray)
 
       localStorage.setItem("favorite", JSON.stringify(favoritesArray))
     }

@@ -226,8 +226,6 @@ export default {
       // Преобразуем строку с датой в объект Date
       const checkDate = new Date(date)
 
-      console.log(startDateStr, endDateStr, date, checkDate >= startDate && checkDate <= endDate)
-
       // Сравниваем даты
       return checkDate >= startDate && checkDate <= endDate
     },
@@ -284,7 +282,6 @@ export default {
         })
       }
 
-      console.log()
       if (this.avalibleTag) {
         res = res.filter(house => {
           const date = this.$moment(house.customerRentPrice[house.customerRentPrice.length - 1].nextPayment, 'MM/DD/YYYY')

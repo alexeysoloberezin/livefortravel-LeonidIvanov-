@@ -190,16 +190,13 @@ export default {
     this.$store.dispatch('contacts/fetchContacts')
 
     if (this.$store.state.currency === 'USDT') {
-      console.log('GET USDT def')
       this.$store.dispatch('fetchCurrencyUSDTIDR')
     } else if (this.$store.state.currency === 'RUB') {
-      console.log('GET RUB def')
       this.$store.dispatch('fetchCurrencyRubIdr')
     }
   },
   computed: {
     whiteHeader() {
-      console.log(this.$route.path)
       if (this.$route.path === '/') {
         return 'header-white'
       } else {
@@ -210,8 +207,6 @@ export default {
       return this.$store.state.contacts.contacts
     },
     favoriteCount() {
-      console.log(this.$store.state.houses.favoriteCount, 'COUNTTT')
-
       return this.$store.state.houses.favoriteCount
     },
     pageRegister() {

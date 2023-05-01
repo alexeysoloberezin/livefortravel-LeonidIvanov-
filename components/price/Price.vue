@@ -66,7 +66,6 @@ export default {
       this.rerender++
     },
     currencyValue(){
-      console.log('curency changed')
       this.changePrice()
     }
   },

@@ -54,7 +54,6 @@ export const actions = {
       .then(data => {
         const exchangeRate = data.bitcoin.rub / data.bitcoin.idr // вычисляем курс IDR/RUB
         commit('SET_CURRENCY', 'RUB')
-        console.log('rub', exchangeRate)
         commit('SET_CURRENCY_VALUE', exchangeRate * 1.004)
         commit('houses/refreshHouses')
       })

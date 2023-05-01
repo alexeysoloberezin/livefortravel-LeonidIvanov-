@@ -10,9 +10,6 @@ export default {
   name: "register",
 
   methods: {
-    send() {
-      console.log("send")
-    },
     async createUser() {
       try {
         await this.$fire.auth.createUserWithEmailAndPassword(
@@ -51,7 +48,6 @@ export default {
                   email: authResult.additionalUserInfo.profile.email || authResult.user.multiFactor.user.email || '',
                   uid: authResult.additionalUserInfo.profile.id || authResult.user.multiFactor.user.uid
                 }).then(docRef => {
-                  console.log("Docref", docRef)
                   context.$router.push('/')
                 }).catch(err => {
                   console.log('err', err)
