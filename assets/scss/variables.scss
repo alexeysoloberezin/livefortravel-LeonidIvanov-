@@ -2,6 +2,11 @@ body, input, input::placeholder, a, .v-application {
   font-family: 'Dosis', sans-serif !important;
 }
 
+body,html{
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+}
 .theme--light.v-application {
   background: none;
 }
@@ -793,3 +798,45 @@ h1 {
     }
   }
 }
+
+@media (max-width: 730px) {
+  .v-main{
+    margin-top: 90px !important;
+  }
+  .mainHouse-block-wrp {
+    .blockTab{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.infoBanner{
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.53);
+  }
+  h1,p {
+    position: relative;
+    display: block;
+    color: #fff !important;
+    z-index: 2;
+    text-align: center;
+  }
+  p{
+    max-width: 650px;
+    font-size: 18px;
+  }
+}
+

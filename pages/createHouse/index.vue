@@ -249,8 +249,8 @@ export default {
 
       house: {
         info: {
-          id: 6,
-          name: 'Q11 in Jimbaran 2BD',
+          id: 8,
+          name: 'ZZZZZZZZZZZZZZZZZ',
           location: 'Jimbaran',
           locationMiniImg: 'Screenshot_7.png',
           rooms: 2,

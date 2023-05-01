@@ -2,13 +2,13 @@
   <div>
     <div>
       <div class="firstBanner">
-        <div class="firstBanner-bg"><img :src="bannersArr[activeBannerIndex].bg" alt=""></div>
+        <div class="firstBanner-bg"><img :src="bannerArrMain.bg" alt=""></div>
         <div class="firstBanner-wrp">
           <div class="firstBanner-l">
-            <div class="firstBanner-title">{{ bannersArr[activeBannerIndex].title }}</div>
-            <div class="firstBanner-text">{{ bannersArr[activeBannerIndex].text }}</div>
+            <div class="firstBanner-title">{{ bannerArrMain.title }}</div>
+            <div class="firstBanner-text">{{ bannerArrMain.text }}</div>
             <v-btn color="success" class="firstBanner-btn" width="180px">{{
-                bannersArr[activeBannerIndex].btnText
+                bannerArrMain.btnText
               }}
             </v-btn>
           </div>
@@ -19,13 +19,13 @@
             <!--              </v-carousel-item>-->
             <!--            </v-carousel>-->
             <VueSlickCarousel v-bind="settings" ref="carousel" @afterChange="updateActiveSlide">
-              <div v-for="(item, i) in bannersArr" :key="i" class="slider-item">
-                <v-img :src="item.bg" alt="" :aspect-ratio="2/3"/>
-                <div class="slider-item-info">
-                  <div class="slider-item-title">{{ item.title }}</div>
-                  <div class="slider-item-text">{{ item.text }}</div>
-                </div>
-              </div>
+              <router-link v-for="(item, i) in bannersArr" :key="i" :to="item.btnLink" class="slider-item">
+                  <v-img  :src="item.bg" alt="" :aspect-ratio="2/3"/>
+                  <div class="slider-item-info">
+                    <div class="slider-item-title">{{ item.title }}</div>
+                    <div class="slider-item-text">{{ item.text }}</div>
+                  </div>
+              </router-link>
             </VueSlickCarousel>
             <div class="d-flex align-center mt-2 slick-info" style="grid-gap: 10px">
               <button @click="showPrev" class="slick-arr">
@@ -153,7 +153,8 @@
               <div class="howWork-number">03</div>
               <div class="howWork-title">Осмотр дома</div>
               <div class="howWork-text">Приходит время осмотра домов. Вы приходите в назначенное время на просмотр
-                выбранных домов. Вы осматриваете дом, проверяете состояние комнат, мебели, сантехники, электрики и других
+                выбранных домов. Вы осматриваете дом, проверяете состояние комнат, мебели, сантехники, электрики и
+                других
                 элементов.
               </div>
             </div>
@@ -192,7 +193,8 @@
             </div>
           </div>
           <div class="howWork-item">
-            <div class="howWork-img"><img src="inter/1618685996_26-p-sovremennii-stil-v-dizaine-interera-27.jpg" alt=""></div>
+            <div class="howWork-img"><img src="inter/1618685996_26-p-sovremennii-stil-v-dizaine-interera-27.jpg" alt="">
+            </div>
             <div class="howWork-info">
               <div class="howWork-number">07</div>
               <div class="howWork-title">Переезд</div>
@@ -204,27 +206,27 @@
         </div>
       </div>
 
-<!--      <div class="banner">-->
-<!--        <div class="banner-title">Наши дома в аренду - лучший выбор для вашего комфортного проживания</div>-->
-<!--        <div class="banner-text">-->
-<!--          <div>Мы-->
-<!--            предлагаем только лучшие варианты для вашего комфортного проживания. Наша компания заботится о том, чтобы-->
-<!--            наши дома были в отличном состоянии и готовы к вашему пребыванию.-->
-<!--          </div>-->
+      <!--      <div class="banner">-->
+      <!--        <div class="banner-title">Наши дома в аренду - лучший выбор для вашего комфортного проживания</div>-->
+      <!--        <div class="banner-text">-->
+      <!--          <div>Мы-->
+      <!--            предлагаем только лучшие варианты для вашего комфортного проживания. Наша компания заботится о том, чтобы-->
+      <!--            наши дома были в отличном состоянии и готовы к вашему пребыванию.-->
+      <!--          </div>-->
 
-<!--          <div>Каждый дом в нашей аренде имеет уютную атмосферу, качественную мебель и оснащен всем необходимым для-->
-<!--            вашего-->
-<!--            пребывания. У нас есть как маленькие уютные квартиры, так и большие дома с садом. Вы можете-->
-<!--            выбрать то, что наиболее подходит для вас и вашей семьи.-->
-<!--          </div>-->
+      <!--          <div>Каждый дом в нашей аренде имеет уютную атмосферу, качественную мебель и оснащен всем необходимым для-->
+      <!--            вашего-->
+      <!--            пребывания. У нас есть как маленькие уютные квартиры, так и большие дома с садом. Вы можете-->
+      <!--            выбрать то, что наиболее подходит для вас и вашей семьи.-->
+      <!--          </div>-->
 
-<!--          <div>Посмотрите наши варианты домов в аренду и выберите тот, который подходит вам лучше всего. Мы гарантируем,-->
-<!--            что вы не пожалеете о своем выборе, а наша команда сделает все возможное, чтобы ваше пребывание было-->
-<!--            приятным и комфортным.-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <v-btn color="white" class="banner-text">Look houses</v-btn>-->
-<!--      </div>-->
+      <!--          <div>Посмотрите наши варианты домов в аренду и выберите тот, который подходит вам лучше всего. Мы гарантируем,-->
+      <!--            что вы не пожалеете о своем выборе, а наша команда сделает все возможное, чтобы ваше пребывание было-->
+      <!--            приятным и комфортным.-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <v-btn color="white" class="banner-text">Look houses</v-btn>-->
+      <!--      </div>-->
       <!--          что мы делаем для вас -->
       <!--          о нас -->
       <!--          контакты -->
@@ -240,7 +242,7 @@ import {isAdmin} from "~/helper/checkRole"
 
 export default {
   components: {
-     VueSlickCarousel
+    VueSlickCarousel
   },
   data() {
     return {
@@ -258,30 +260,44 @@ export default {
       },
       activeBannerIndex: 0,
       activeSlide: 0,
+      bannerArrMain: {
+        bg: 'szabolcs-toth-BE2T__AyThs-unsplash.jpg',
+        title: 'Never stop exploring the world',
+        text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
+        btnText: 'Show',
+        btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
+      },
       bannersArr: [
         {
-          bg: 'landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise.jpg',
+          bg: '5695d7338d8c5e2eba2ffa3147250ca2.jpg',
+          title: 'Never stop exploring the world',
+          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
+          btnText: 'Show',
+          btnLink: '/houses'
+        },
+        {
+          bg: 'https://images.unsplash.com/photo-1538964173425-93884d739596?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+          title: 'Never stop exploring the world',
+          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
+          btnText: 'Show',
+          btnLink: '/beach'
+        },
+        {
+          bg: 'https://i.pinimg.com/564x/ea/1b/ed/ea1bed5065aadd208bea842c74d6e520.jpg',
           title: 'Never stop exploring the world',
           text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
           btnText: 'Show',
           btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
         },
         {
-          bg: 'https://www.pravmir.ru/wp-content/uploads/2021/02/download-936x560.jpg',
+          bg: 'brenda-godinez-k4116JZ07S0-unsplash.jpg',
           title: 'Never stop exploring the world',
           text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
           btnText: 'Show',
-          btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
+          btnLink: '/houses'
         },
         {
-          bg: 'landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise.jpg',
-          title: 'Never stop exploring the world',
-          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
-          btnText: 'Show',
-          btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
-        },
-        {
-          bg: 'https://www.pravmir.ru/wp-content/uploads/2021/02/download-936x560.jpg',
+          bg: 'brenda-godinez-k4116JZ07S0-unspl (4).jpg',
           title: 'Never stop exploring the world',
           text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
           btnText: 'Show',
@@ -396,19 +412,22 @@ export default {
 .howWork {
   display: grid;
   //grid-template-columns: 230px 1fr;
-  padding: 100px ;
-  &-img{
+  padding: 100px;
+
+  &-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    &:after{
+
+    &:after {
       content: '';
       position: absolute;
       top: 0;
@@ -420,7 +439,8 @@ export default {
       background: rgba(0, 0, 0, 0.45);
     }
   }
-  &-item{
+
+  &-item {
     position: relative;
     height: 350px;
     color: #fff;
@@ -429,53 +449,64 @@ export default {
     overflow: hidden;
     padding: 15px 20px;
     transition: .65s ease-in-out;
-    .v-btn{
+
+    .v-btn {
       transition: .4s;
       opacity: 0;
     }
-    &:hover{
+
+    &:hover {
       flex-grow: 15;
       border-left: 1px solid rgb(196, 185, 185);
       border-right: 1px solid rgba(196, 185, 185);
-      .howWork-text{
+
+      .howWork-text {
         opacity: 0.7;
         transition-delay: .35s;
       }
-      .v-btn{
+
+      .v-btn {
         opacity: 1;
         transition-delay: .35s;
       }
-      .howWork-img:after{
+
+      .howWork-img:after {
         background: rgba(0, 0, 0, 0.6);
       }
     }
   }
-  &-info{
+
+  &-info {
     position: relative;
     z-index: 4;
   }
-  &-number{
+
+  &-number {
     font-size: 65px;
     font-weight: 700;
     line-height: 1.1;
   }
-  &-text{
+
+  &-text {
     opacity: 0;
     transition: .4s;
   }
-  &-title{
+
+  &-title {
     opacity: 1;
     font-size: 20px;
     margin-bottom: 7px;
     font-weight: 600;
   }
+
   &_r {
     display: flex;
     border-radius: 10px;
     overflow: hidden;
     align-items: center;
-    &:hover{
-      .howWork-item{
+
+    &:hover {
+      .howWork-item {
         width: calc(100% / 14);
       }
     }

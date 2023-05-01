@@ -24,7 +24,7 @@
           <LocationTag border :name-location="getHouse.info.location"/>
           <hot-tag v-if="getHouse.info.hot"/>
         </div>
-        <div class="d-flex ">
+        <div class="d-flex mt-3 mt-md-0">
           <h1 class="text--black mb-3">{{ getHouse.info.name }}</h1>
 
           <v-btn icon @click="makeFavorite(getHouse.info.id)" class="ml-auto">
@@ -404,6 +404,15 @@ export default {
   flex-wrap: wrap;
   width: 100%;
   grid-gap: 10px;
+
+  @media (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .blockTab{
+      max-width: initial;
+      min-width: initial;
+    }
+  }
 }
 
 .dates-price {
@@ -537,5 +546,9 @@ export default {
       padding: 10px;
     }
   }
+
+
 }
+
+
 </style>

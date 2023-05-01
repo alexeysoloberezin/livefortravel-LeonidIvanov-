@@ -84,7 +84,8 @@
               {{ icons.mdiBellOutline }}
             </v-icon>
           </v-btn>
-          <!--          <app-bar-user-menu></app-bar-user-menu>-->
+
+          <AppBarUserMenu></AppBarUserMenu>
         </div>
       </div>
     </div>
@@ -197,7 +198,7 @@ export default {
   },
   computed: {
     whiteHeader() {
-      if (this.$route.path === '/') {
+      if (this.$route.path === '/' || this.$route.path === '/beach') {
         return 'header-white'
       } else {
         return ''
