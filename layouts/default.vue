@@ -31,8 +31,8 @@
       <div class="w-full">
         <div class="d-flex align-center mx-6">
           <!-- Left Content -->
-          <router-link to="/" class="logo"><img style="width: 150px;height: auto;object-fit: contain"
-                                                src="icons8-oracle-logo-150.png"
+          <router-link to="/" class="logo"><img style="width: 200px;height: auto;object-fit: contain"
+                                                :src="!whiteHeader ? 'Group 21.png' : 'logoWghite.png'"
                                                 alt=""></router-link>
 
           <nav class="nav">
@@ -251,7 +251,6 @@ export default {
 .logo {
   margin-top: 10px;
   margin-right: 30px;
-  height: 50px;
   overflow: hidden;
   display: flex;
 

@@ -270,15 +270,15 @@ export default {
       bannersArr: [
         {
           bg: '5695d7338d8c5e2eba2ffa3147250ca2.jpg',
-          title: 'Never stop exploring the world',
-          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
+          title: 'Каталог домов',
+          text: 'Добро пожаловать в наш каталог домов! Здесь вы найдете все, что нужно для того, чтобы выбрать идеальный дом для вашего отпуска.',
           btnText: 'Show',
           btnLink: '/houses'
         },
         {
           bg: 'https://images.unsplash.com/photo-1538964173425-93884d739596?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
-          title: 'Never stop exploring the world',
-          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
+          title: 'Пляжи букита',
+          text: ' Здесь вы найдете полезную информацию о самых популярных пляжах Букита. От красивых пейзажей и уединенных уголков до возможностей для серфинга и других видов активного отдыха - все это вы найдете на пляжах Букита.',
           btnText: 'Show',
           btnLink: '/beach'
         },
