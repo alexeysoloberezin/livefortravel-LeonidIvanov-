@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - materio-vuetify-nuxtjs-admin-template-free',
-    title: 'materio-vuetify-nuxtjs-admin-template-free',
+    titleTemplate: 'Live For Travel - Дома на Бали',
+    title: 'Live For Travel - Дома на Бали',
     htmlAttrs: {
       lang: 'en',
     },
