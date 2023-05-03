@@ -100,8 +100,8 @@
       <div class="w-full">
         <div class="mx-6 d-flex  align-center">
           <router-link to="/" class="logo">
-            <img style="width: 150px;height: auto;object-fit: contain"
-                 src="icons8-oracle-logo-150.png"
+            <img style="width: 200px;height: auto;object-fit: contain"
+                 src="Group 21.png"
                  alt="">
           </router-link>
           <nav class="nav">

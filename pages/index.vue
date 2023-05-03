@@ -20,11 +20,11 @@
             <!--            </v-carousel>-->
             <VueSlickCarousel v-bind="settings" ref="carousel" @afterChange="updateActiveSlide">
               <router-link v-for="(item, i) in bannersArr" :key="i" :to="item.btnLink" class="slider-item">
-                  <v-img  :src="item.bg" alt="" :aspect-ratio="2/3"/>
-                  <div class="slider-item-info">
-                    <div class="slider-item-title">{{ item.title }}</div>
-                    <div class="slider-item-text">{{ item.text }}</div>
-                  </div>
+                <v-img :src="item.bg" alt="" :aspect-ratio="2/3"/>
+                <div class="slider-item-info">
+                  <div class="slider-item-title">{{ item.title }}</div>
+                  <div class="slider-item-text">{{ item.text }}</div>
+                </div>
               </router-link>
             </VueSlickCarousel>
             <div class="d-flex align-center mt-2 slick-info" style="grid-gap: 10px">
@@ -122,10 +122,18 @@
       </div>
 
       <div class="howWork">
-        <div class="howWork_l">
-          <div class="about-title mb-4">How its work</div>
-        </div>
         <div class="howWork_r">
+          <div class="howWork-item">
+            <div class="howWork-info">
+              <div class="about-title mb-4">How its work</div>
+              <p>Наша команда экспертов поможет вам найти идеальное жилье, учитывая все ваши пожелания и требования,
+                включая ценовой диапазон, местоположение, тип жилья и другие факторы.</p>
+              <p>Мы также предоставляем
+                консультации по всем вопросам, связанным с арендой жилья, включая права и обязанности арендодателей и
+                арендаторов. Кроме того, мы оказываем поддержку на всех этапах процесса аренды, включая переезд и
+                заселение. </p>
+            </div>
+          </div>
           <div class="howWork-item">
             <div class="howWork-img"><img src="inter/balazs-ketyi-L0nipfx-Ry4-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
@@ -151,6 +159,17 @@
             <div class="howWork-img"><img src="inter/michael-oxendine-GHCVUtBECuY-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">03</div>
+              <div class="howWork-title">Уточнение условий аренды</div>
+              <div class="howWork-text">Вы задаете все интересующие вас вопросы по условиям аренды: стоимости,
+                дополнительных платежах, сроку аренды, правилам проживания, а также возможности внесения изменений в
+                договор.
+              </div>
+            </div>
+          </div>
+          <div class="howWork-item">
+            <div class="howWork-img"><img src="inter/roberto-nickson-rEJxpBskj3Q-unsplash.jpg" alt=""></div>
+            <div class="howWork-info">
+              <div class="howWork-number">04</div>
               <div class="howWork-title">Осмотр дома</div>
               <div class="howWork-text">Приходит время осмотра домов. Вы приходите в назначенное время на просмотр
                 выбранных домов. Вы осматриваете дом, проверяете состояние комнат, мебели, сантехники, электрики и
@@ -159,17 +178,7 @@
               </div>
             </div>
           </div>
-          <div class="howWork-item">
-            <div class="howWork-img"><img src="inter/roberto-nickson-rEJxpBskj3Q-unsplash.jpg" alt=""></div>
-            <div class="howWork-info">
-              <div class="howWork-number">04</div>
-              <div class="howWork-title">Уточнение условий аренды</div>
-              <div class="howWork-text">Вы задаете все интересующие вас вопросы по условиям аренды: стоимости,
-                дополнительных платежах, сроку аренды, правилам проживания, а также возможности внесения изменений в
-                договор.
-              </div>
-            </div>
-          </div>
+
           <div class="howWork-item">
             <div class="howWork-img"><img src="inter/spacejoy-IH7wPsjwomc-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
@@ -179,16 +188,17 @@
                 Договор обычно включает в себя права и обязанности сторон,
                 стоимость аренды, даты платежей и др.
               </div>
+              <v-btn color="white" outlined  class="mt-2">Пример договора</v-btn>
             </div>
           </div>
+
           <div class="howWork-item">
             <div class="howWork-img"><img src="inter/spacejoy-YI2YkyaREHk-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">06</div>
-              <div class="howWork-title">Залог</div>
-              <div class="howWork-text">Если аренда начнется через какое-то время, собственник дома может потребовать
-                залог в размере 2 млн рупий. Это обеспечивает собственнику защиту от потери дохода в случае, если вы
-                откажетесь от аренды.
+              <div class="howWork-title">Оплата</div>
+              <div class="howWork-text">
+                Если вы забронировали дом позднее даты аренды, указанной на сайте, то в соответствии с условиями договора аренды выбранного вами дома, вам может потребоваться внести залог.
               </div>
             </div>
           </div>
@@ -197,10 +207,19 @@
             </div>
             <div class="howWork-info">
               <div class="howWork-number">07</div>
-              <div class="howWork-title">Переезд</div>
+              <div class="howWork-title">Заселение</div>
               <div class="howWork-text">После заключения договора и внесения залога, вы можете заселиться в арендованный
                 дом и начать жить там с комфортом и уютом.
               </div>
+            </div>
+          </div>
+          <div class="howWork-item">
+            <div class="howWork-info">
+              <div class="about-title mb-4">Свяжитесь с нами.</div>
+              <p>Наша команда всегда готова помочь вам найти идеальное жилье и обеспечить безопасный и комфортный
+                процесс аренды. Свяжитесь с нами, чтобы узнать больше о том, как мы можем помочь вам в поиске и аренде
+                жилья.</p>
+              <v-btn color="success">{{ $t('contact') }}</v-btn>
             </div>
           </div>
         </div>
@@ -419,11 +438,13 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
+    border-radius: 15px;
     height: 100%;
 
     img {
       width: 100%;
       height: 100%;
+      border-radius: 15px;
       object-fit: cover;
     }
 
@@ -435,8 +456,9 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
+      border-radius: 10px;
       transition: .4s;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.55);
     }
   }
 
@@ -445,40 +467,67 @@ export default {
     height: 350px;
     color: #fff;
     flex-grow: 1;
-    width: calc(100% / 7);
-    overflow: hidden;
     padding: 15px 20px;
+    background: #fff;
+    border-radius: 10px;
+    //overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.58);
     transition: .65s ease-in-out;
 
     .v-btn {
       transition: .4s;
-      opacity: 0;
+      //opacity: 0;
     }
-
-    &:hover {
-      flex-grow: 15;
-      border-left: 1px solid rgb(196, 185, 185);
-      border-right: 1px solid rgba(196, 185, 185);
-
-      .howWork-text {
-        opacity: 0.7;
-        transition-delay: .35s;
+    //&:after{
+    //  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>arrow-right-bold-outline</title><path d="M11,16H3V8H11V2L21,12L11,22V16M13,7V10H5V14H13V17L18,12L13,7Z" /></svg>');
+    //  content: '';
+    //  position: absolute;
+    //  top: 50%;
+    //  opacity: 0.5;
+    //  transform: translateY(-50%);
+    //  right: -50px;
+    //  width: 45px;
+    //  height: 45px;
+    //}
+    &:nth-child(3){
+      &:after{
+        right: 50%;
+        bottom: -50px;
+        top: initial;
+        transform: translateX(50%) rotate(90deg);
       }
-
-      .v-btn {
-        opacity: 1;
-        transition-delay: .35s;
+    }
+    &:nth-child(4){
+      &:after{
+        right: 50%;
+        bottom: -50px;
+        top: initial;
+        transform: translateX(50%) rotate(90deg);
       }
-
-      .howWork-img:after {
-        background: rgba(0, 0, 0, 0.6);
+    }
+    &:nth-child(5),
+    &:nth-child(6){
+      &:After{
+        left: -50px;
+        right: initial;
+        transform: rotate(180deg) translateX(0px);
       }
+    }
+    &:nth-child(8):after{
+      content: none;
+    }
+    &:last-child:after{
+      content: none;
     }
   }
 
   &-info {
     position: relative;
     z-index: 4;
+    p{
+      color: #333;
+      font-size: 15px;
+    }
   }
 
   &-number {
@@ -488,7 +537,8 @@ export default {
   }
 
   &-text {
-    opacity: 0;
+    //opacity: 0;
+    opacity: 0.8;
     transition: .4s;
   }
 
@@ -500,16 +550,16 @@ export default {
   }
 
   &_r {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:25px;
     border-radius: 10px;
-    overflow: hidden;
-    align-items: center;
 
-    &:hover {
-      .howWork-item {
-        width: calc(100% / 14);
-      }
-    }
+    //&:hover {
+    //  .howWork-item {
+    //    width: calc(100% / 14);
+    //  }
+    //}
   }
 }
 </style>
