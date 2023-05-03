@@ -122,12 +122,12 @@ export default {
 
 .cardHouse-leftTopTags {
   position: absolute;
-  top: 9px;
+  top: 12px;
   display: flex;
   flex-wrap: wrap;
   grid-gap: 7px;
   align-self: center;
-  left: 6px;
+  left: 10px;
   z-index: 2;
 
   & > h4 {
@@ -166,6 +166,7 @@ export default {
   overflow: hidden;
   &-leftTopTags{
     z-index: 7;
+    max-width: calc(100% - 70px);
   }
 
 

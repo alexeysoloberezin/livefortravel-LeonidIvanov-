@@ -142,7 +142,7 @@
               <div class="howWork-text">Вы начинаете поиск подходящего варианта аренды жилья. Вы можете перейти на
                 страницу с нашими домами и выбрать тот, который будет вам по душе.
               </div>
-              <v-btn color="success" outlined class="mt-3">Посмотреть дома</v-btn>
+              <v-btn to="/houses" color="success" outlined class="mt-3">Посмотреть дома</v-btn>
             </div>
           </div>
           <div class="howWork-item">
