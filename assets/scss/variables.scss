@@ -794,13 +794,56 @@ h1 {
   }
 }
 
-@media (max-width: 730px) {
-  .v-main{
-    margin-top: 90px !important;
+@media (max-width: 900px) {
+  .about{
+    grid-template-columns: 1fr;
+    &-l{
+      width: 105vw;
+    }
+    &-r{
+      max-width: 97vw;
+      overflow: hidden;
+    }
   }
+  .whatWeDo-r{
+    grid-template-columns:  1fr 1fr;
+  }
+}
+@media (max-width: 730px) {
   .mainHouse-block-wrp {
     .blockTab{
       margin-bottom: 0;
+    }
+  }
+}
+@media (max-width: 560px) {
+  .about{
+    &-text{
+      font-size: 14px;
+    }
+    &-title{
+      font-size: 28px;
+    }
+    &-l{
+      grid-template-columns: 1fr 1fr;
+      transform: translateX(50px);
+    }
+    .v-image{
+      height: 220px;
+      &:nth-child(1){
+        display: none;
+      }
+    }
+  }
+  .whatWeDo{
+    &-item-title{
+      font-size: 19px;
+    }
+    &-item-text{
+      font-size: 14px;
+    }
+    &-r{
+      grid-template-columns: 1fr;
     }
   }
 }

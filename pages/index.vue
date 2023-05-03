@@ -5,7 +5,7 @@
         <div class="firstBanner-bg"><img :src="bannerArrMain.bg" alt=""></div>
         <div class="firstBanner-wrp">
           <div class="firstBanner-l">
-            <div class="firstBanner-title">{{ bannerArrMain.title }}</div>
+            <div class="firstBanner-title" v-html="bannerArrMain.title"></div>
             <div class="firstBanner-text">{{ bannerArrMain.text }}</div>
             <v-btn color="success" class="firstBanner-btn" width="180px">{{
                 bannerArrMain.btnText
@@ -48,7 +48,7 @@
       </div>
 
       <div class="container">
-        <div class="about mt-16">
+        <div class="about mt-6 mt-md-16">
           <div class="about-l">
             <v-img aspect-ratio="3/2" src="landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise.jpg"
                    alt=""/>
@@ -76,7 +76,7 @@
       </div>
 
 
-      <div class="whatWeDo container my-16 py-16">
+      <div class="whatWeDo container my-16 py-md-16 py-0">
         <div class="whatWeDo-r">
           <div class="whatWeDo-item">
             <h2 class="about-title">What We Do For You</h2>
@@ -281,7 +281,7 @@ export default {
       activeSlide: 0,
       bannerArrMain: {
         bg: 'szabolcs-toth-BE2T__AyThs-unsplash.jpg',
-        title: 'Never stop exploring the world',
+        title: 'Life <br>is Travel',
         text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
         btnText: 'Show',
         btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
@@ -426,6 +426,57 @@ export default {
       background: rgba(0, 0, 0, 0.55);
     }
   }
+  @media (max-width: 1400px) {
+    .firstBanner-r{
+      width: calc(80% - 200px);
+    }
+  }
+  @media (max-width: 900px) {
+    .firstBanner-r{
+      width: 100%;
+      margin-left: 25px;
+    }
+    .firstBanner{
+      max-height: initial;
+    }
+    .firstBanner-l{
+      min-height: initial;
+      padding-left: 25px;
+      margin: 50px 0;
+    }
+    .firstBanner-wrp{
+      display: block;
+      height: initial;
+    }
+  }
+  @media (max-width: 550px) {
+    .firstBanner-title{
+      font-size: 50px;
+    }
+    .firstBanner-text{
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .slick-slide{
+      width: 220px;
+    }
+    .slider-item-title{
+      font-size: 20px;
+    }
+    .slider-item-text{
+      font-size: 14px;
+    }
+    .slick-arr{
+      width: 45px;
+      height: 45px;
+    }
+    .slick-info{
+      padding-right: 40px;
+    }
+    .slick-index{
+      font-size: 60px;
+    }
+  }
 }
 
 .howWork {
@@ -464,7 +515,7 @@ export default {
 
   &-item {
     position: relative;
-    height: 350px;
+    min-height: 350px;
     color: #fff;
     flex-grow: 1;
     padding: 15px 20px;
@@ -477,47 +528,6 @@ export default {
     .v-btn {
       transition: .4s;
       //opacity: 0;
-    }
-    //&:after{
-    //  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>arrow-right-bold-outline</title><path d="M11,16H3V8H11V2L21,12L11,22V16M13,7V10H5V14H13V17L18,12L13,7Z" /></svg>');
-    //  content: '';
-    //  position: absolute;
-    //  top: 50%;
-    //  opacity: 0.5;
-    //  transform: translateY(-50%);
-    //  right: -50px;
-    //  width: 45px;
-    //  height: 45px;
-    //}
-    &:nth-child(3){
-      &:after{
-        right: 50%;
-        bottom: -50px;
-        top: initial;
-        transform: translateX(50%) rotate(90deg);
-      }
-    }
-    &:nth-child(4){
-      &:after{
-        right: 50%;
-        bottom: -50px;
-        top: initial;
-        transform: translateX(50%) rotate(90deg);
-      }
-    }
-    &:nth-child(5),
-    &:nth-child(6){
-      &:After{
-        left: -50px;
-        right: initial;
-        transform: rotate(180deg) translateX(0px);
-      }
-    }
-    &:nth-child(8):after{
-      content: none;
-    }
-    &:last-child:after{
-      content: none;
     }
   }
 
@@ -560,6 +570,30 @@ export default {
     //    width: calc(100% / 14);
     //  }
     //}
+  }
+}
+@media (max-width: 1400px) {
+  .howWork{
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 950px) {
+  .howWork_r{
+    grid-template-columns: 1fr 1fr;
+  }
+  .howWork-text,.howWork-info p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 650px) {
+  .howWork_r {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  .howWork-item {
+    min-height: initial;
+    padding: 25px;
+
   }
 }
 </style>

@@ -29,7 +29,7 @@
       v-if="!pageRegister"
     >
       <div class="w-full">
-        <div class="d-flex align-center mx-6">
+        <div class="d-flex align-center mx-0 mx-md-6">
           <!-- Left Content -->
           <router-link to="/" class="logo"><img style="width: 200px;height: auto;object-fit: contain"
                                                 :src="!whiteHeader ? 'Group 21.png' : 'logoWghite.png'"
