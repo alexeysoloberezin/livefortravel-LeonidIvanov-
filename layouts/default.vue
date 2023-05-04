@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <v-main :style="{marginTop: !whiteHeader ? '60px' : ''}">
+    <v-main :style="{marginTop: !whiteHeader ? '100px' : ''}">
       <Nuxt/>
     </v-main>
 
@@ -198,7 +198,7 @@ export default {
   },
   computed: {
     whiteHeader() {
-      if (this.$route.path === '/' || this.$route.path === '/beach') {
+      if (this.$route.path === '/' || this.$route.path === '/beach' || this.$route.path === '/ru' || this.$route.path === '/ru/beach') {
         return 'header-white'
       } else {
         return ''

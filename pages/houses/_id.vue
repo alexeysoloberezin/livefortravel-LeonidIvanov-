@@ -139,13 +139,13 @@
                     <div class="dates-price mb-2" v-if="selectedNights">Price
                       <b>{{ makePrice(calcPriceMethod(calculatePrice(getHouse.info.price))) }}</b> for
                       <b>{{ selectedNights }} nights</b></div>
-                    <div  v-if="selectedNights" class="my-3">{{ $t('priceWarning') }}</div>
+                    <div v-if="selectedNights" class="my-3">{{ $t('priceWarning') }}</div>
                   </div>
                   <input style="position:absolute;visibility: hidden" id="input-id" type="text"/>
                 </div>
               </div>
 
-              <v-btn width="100%" color="success" class="mt-4" @click="$store.commit('SHOW_CONTACT_MODAL')">
+              <v-btn width="100%" color="success" class="mt-4" @click="openCont">
                 {{ $t('contact') }}
               </v-btn>
               <v-menu offset-y :close-on-content-click="false">
@@ -228,8 +228,30 @@ export default {
     })
   },
   methods: {
-    toggleModal(e){
-      if(e.target.classList.contains('modal')){
+    changeDare(dateRangeStr) {
+      if(!dateRangeStr) return null
+
+      const [startDateStr, endDateStr] = dateRangeStr.split(' - ');
+
+      const startDate = this.$moment(startDateStr, 'MM/DD/YYYY');
+      const formattedStartDate = startDate.format('D MMMM YYYY');
+
+      const endDate = this.$moment(endDateStr, 'MM/DD/YYYY');
+      const formattedEndDate = endDate.format('D MMMM YYYY');
+
+      return `${formattedStartDate} - ${formattedEndDate.replace('май', 'июнь')}`;
+    },
+    openCont() {
+      this.$store.commit('houses/setSelectedInfo', {
+        period: this.changeDare(this.selectedDate),
+        price: this.makePrice(this.calcPriceMethod(this.calculatePrice(this.getHouse.info.price))),
+        hash: null,
+        houseName: this.getHouse.info.name,
+      })
+      this.$store.commit('SHOW_CONTACT_MODAL')
+    },
+    toggleModal(e) {
+      if (e.target.classList.contains('modal')) {
         this.openVideo = false
       }
     },
@@ -246,6 +268,8 @@ export default {
       }
     },
     makePrice(price) {
+      if(!price) return ''
+
       return makePrice(price) + ' ' + this.$store.state.currency
     },
     calcPriceMethod(price) {
@@ -408,7 +432,7 @@ export default {
   @media (max-width: 600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    .blockTab{
+    .blockTab {
       max-width: initial;
       min-width: initial;
     }
@@ -530,19 +554,21 @@ export default {
 }
 
 @media (max-width: 1260px) {
-  .mainHouse-images{
+  .mainHouse-images {
     grid-template-columns: 1fr;
   }
-  .mainHouse-stick{
+  .mainHouse-stick {
     flex-direction: column;
-    &-right{
+
+    &-right {
       width: 100%;
     }
   }
 }
+
 @media (max-width: 500px) {
-  .mainHouse-stick{
-    &-right{
+  .mainHouse-stick {
+    &-right {
       padding: 10px;
     }
   }

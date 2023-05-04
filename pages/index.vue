@@ -60,17 +60,13 @@
                    alt=""/>
           </div>
           <div class="about-r">
-            <div class="about-title mb-2">О нас</div>
+            <div class="about-title mb-2">{{ $t('aboutUs') }}</div>
             <div class="about-text">
-              <div>Мы - команда профессионалов, которая занимается арендой домов на Бали. Наша компания осуществляет
-                долгосрочную аренду домов и вилл на острове, предоставляя качественный сервис для наших клиентов.
-              </div>
-              <div>Мы не только предлагаем аренду домов на Бали, но и проводим работы по их реставрации и обслуживанию,
-                чтобы обеспечить максимальный комфорт для наших гостей. Наша команда усердно трудится, чтобы каждый наш
-                клиент получил первоклассное обслуживание и насладился незабываемым отдыхом на Бали.
+              <div>{{ $t('aboutUsTxt1') }}</div>
+              <div>{{ $t('aboutUsTxt2') }}
               </div>
             </div>
-            <v-btn class="about-btn my-4" color="success">Контакты</v-btn>
+            <v-btn class="about-btn my-4" color="success">{{ $t('contact') }}</v-btn>
           </div>
         </div>
       </div>
@@ -79,44 +75,36 @@
       <div class="whatWeDo container my-16 py-md-16 py-0">
         <div class="whatWeDo-r">
           <div class="whatWeDo-item">
-            <h2 class="about-title">What We Do For You</h2>
+            <h2 class="about-title">{{ $t('WhatWDYou') }}</h2>
           </div>
           <div class="whatWeDo-item">
             <div class="whatWeDo-item-icon"><img src="sofa.png" alt=""></div>
-            <div class="whatWeDo-item-title">Комфорт и доступность</div>
-            <div class="whatWeDo-item-text">Мы также стараемся сделать наши услуги доступными и обеспечить комфортное
-              проживание в отреставрированных домах на Бали. Мы работаем над тем, чтобы наши клиенты получили наилучший
-              сервис и могли насладиться пребыванием в своих домах.
+            <div class="whatWeDo-item-title">{{ $t('WhatWDYou1Title') }}</div>
+            <div class="whatWeDo-item-text">{{ $t('WhatWDYou1Text') }}
             </div>
           </div>
           <div class="whatWeDo-item">
             <div class="whatWeDo-item-icon"><img src="shield.png" alt=""></div>
-            <div class="whatWeDo-item-title">Легальность</div>
-            <div class="whatWeDo-item-text">Мы - легально зарегистрированная компания, которая соответствует всем
-              законодательным требованиям и правилам. Это означает, что вы можете работать с нами с уверенностью в том,
-              что ваши деньги и личные данные находятся в безопасности.
+            <div class="whatWeDo-item-title">{{ $t('WhatWDYou2Title') }}</div>
+            <div class="whatWeDo-item-text">{{ $t('WhatWDYou2Text') }}
             </div>
           </div>
           <div class="whatWeDo-item">
             <div class="whatWeDo-item-icon"><img src="cleanliness.png" alt=""></div>
-            <div class="whatWeDo-item-title">Чистота</div>
-            <div class="whatWeDo-item-text">Мы предлагаем профессиональную уборку, используя экологически чистые
-              средства и методы, чтобы ваш дом был идеально чистым и комфортным для проживания.
+            <div class="whatWeDo-item-title">{{ $t('WhatWDYou3Title') }}</div>
+            <div class="whatWeDo-item-text">{{ $t('WhatWDYou3Text') }}
             </div>
           </div>
           <div class="whatWeDo-item">
             <div class="whatWeDo-item-icon"><img src="clock.png" alt=""></div>
-            <div class="whatWeDo-item-title">Quick response</div>
-            <div class="whatWeDo-item-text">Мы понимаем важность своевременной коммуникации, поэтому всегда быстро
-              отвечаем на ваши сообщения и запросы. Вы можете рассчитывать на нас, когда вам нужно.
+            <div class="whatWeDo-item-title">{{ $t('WhatWDYou4Title') }}</div>
+            <div class="whatWeDo-item-text">{{ $t('WhatWDYou4Text') }}
             </div>
           </div>
           <div class="whatWeDo-item">
             <div class="whatWeDo-item-icon"><img src="satisfaction.png" alt=""></div>
-            <div class="whatWeDo-item-title">Ensure Your Satisfaction</div>
-            <div class="whatWeDo-item-text">Наша главная цель - ваше удовлетворение. Мы тесно сотрудничаем с вами, чтобы
-              понимать ваши потребности и предпочтения, и стремимся достичь результатов, превышающих ваши ожидания.
-            </div>
+            <div class="whatWeDo-item-title">{{ $t('WhatWDYou5Title') }}</div>
+            <div class="whatWeDo-item-text">{{ $t('WhatWDYou5Text') }}</div>
           </div>
         </div>
       </div>
@@ -125,33 +113,27 @@
         <div class="howWork_r">
           <div class="howWork-item">
             <div class="howWork-info">
-              <div class="about-title mb-4">How its work</div>
-              <p>Наша команда экспертов поможет вам найти идеальное жилье, учитывая все ваши пожелания и требования,
-                включая ценовой диапазон, местоположение, тип жилья и другие факторы.</p>
-              <p>Мы также предоставляем
-                консультации по всем вопросам, связанным с арендой жилья, включая права и обязанности арендодателей и
-                арендаторов. Кроме того, мы оказываем поддержку на всех этапах процесса аренды, включая переезд и
-                заселение. </p>
+              <div class="about-title mb-4">{{ $t('howWork') }}</div>
+              <p>{{ $t('howWorkTxt1') }}</p>
+              <p>{{ $t('howWorkTxt2') }}</p>
             </div>
           </div>
           <div class="howWork-item">
             <div class="howWork-img"><img src="inter/balazs-ketyi-L0nipfx-Ry4-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">01</div>
-              <div class="howWork-title">Поиск дома</div>
-              <div class="howWork-text">Вы начинаете поиск подходящего варианта аренды жилья. Вы можете перейти на
-                страницу с нашими домами и выбрать тот, который будет вам по душе.
+              <div class="howWork-title">{{ $t('howWorkBx1Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx1Text') }}
               </div>
-              <v-btn to="/houses" color="success" outlined class="mt-3">Посмотреть дома</v-btn>
+              <v-btn to="/houses" color="success" outlined class="mt-3">{{ $t('lookHouses') }}</v-btn>
             </div>
           </div>
           <div class="howWork-item">
             <div class="howWork-img"><img src="inter/michael-oxendine-BfkTFeysp34-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">02</div>
-              <div class="howWork-title">Выбор подходящего дома</div>
-              <div class="howWork-text">После просмотра объявлений вы выбираете подходящие варианты и записываетесь на
-                осмотр.
+              <div class="howWork-title">{{ $t('howWorkBx2Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx2Text') }}
               </div>
             </div>
           </div>
@@ -159,10 +141,8 @@
             <div class="howWork-img"><img src="inter/michael-oxendine-GHCVUtBECuY-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">03</div>
-              <div class="howWork-title">Уточнение условий аренды</div>
-              <div class="howWork-text">Вы задаете все интересующие вас вопросы по условиям аренды: стоимости,
-                дополнительных платежах, сроку аренды, правилам проживания, а также возможности внесения изменений в
-                договор.
+              <div class="howWork-title">{{ $t('howWorkBx3Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx3Text') }}
               </div>
             </div>
           </div>
@@ -170,11 +150,8 @@
             <div class="howWork-img"><img src="inter/roberto-nickson-rEJxpBskj3Q-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">04</div>
-              <div class="howWork-title">Осмотр дома</div>
-              <div class="howWork-text">Приходит время осмотра домов. Вы приходите в назначенное время на просмотр
-                выбранных домов. Вы осматриваете дом, проверяете состояние комнат, мебели, сантехники, электрики и
-                других
-                элементов.
+              <div class="howWork-title">{{ $t('howWorkBx4Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx4Text') }}
               </div>
             </div>
           </div>
@@ -183,12 +160,10 @@
             <div class="howWork-img"><img src="inter/spacejoy-IH7wPsjwomc-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">05</div>
-              <div class="howWork-title">Заключение договора</div>
-              <div class="howWork-text"> Если вы решаете арендовать дом сразу, вы заключаете договор с нашей компанией.
-                Договор обычно включает в себя права и обязанности сторон,
-                стоимость аренды, даты платежей и др.
+              <div class="howWork-title">{{ $t('howWorkBx5Title') }}</div>
+              <div class="howWork-text"> {{ $t('howWorkBx5Text') }}
               </div>
-              <v-btn color="white" outlined  class="mt-2">Пример договора</v-btn>
+              <v-btn target="_blank" href="https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/documents%2F%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20K4%20(5)%20(1).pdf?alt=media&token=3c969ddf-3327-4067-8298-71dbc115db16" color="white" outlined  class="mt-2">Пример договора</v-btn>
             </div>
           </div>
 
@@ -196,9 +171,8 @@
             <div class="howWork-img"><img src="inter/spacejoy-YI2YkyaREHk-unsplash.jpg" alt=""></div>
             <div class="howWork-info">
               <div class="howWork-number">06</div>
-              <div class="howWork-title">Оплата</div>
-              <div class="howWork-text">
-                Если вы забронировали дом позднее даты аренды, указанной на сайте, то в соответствии с условиями договора аренды выбранного вами дома, вам может потребоваться внести залог.
+              <div class="howWork-title">{{ $t('howWorkBx6Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx6Text') }}
               </div>
             </div>
           </div>
@@ -207,19 +181,16 @@
             </div>
             <div class="howWork-info">
               <div class="howWork-number">07</div>
-              <div class="howWork-title">Заселение</div>
-              <div class="howWork-text">После заключения договора и внесения залога, вы можете заселиться в арендованный
-                дом и начать жить там с комфортом и уютом.
+              <div class="howWork-title">{{ $t('howWorkBx7Title') }}</div>
+              <div class="howWork-text">{{ $t('howWorkBx7Text') }}
               </div>
             </div>
           </div>
           <div class="howWork-item">
             <div class="howWork-info">
-              <div class="about-title mb-4">Свяжитесь с нами.</div>
-              <p>Наша команда всегда готова помочь вам найти идеальное жилье и обеспечить безопасный и комфортный
-                процесс аренды. Свяжитесь с нами, чтобы узнать больше о том, как мы можем помочь вам в поиске и аренде
-                жилья.</p>
-              <v-btn color="success">{{ $t('contact') }}</v-btn>
+              <div class="about-title mb-4">{{ $t('howWorkBx8Title') }}</div>
+              <p>{{ $t('howWorkBx8Text') }}</p>
+              <v-btn @click="$store.commit('SHOW_CONTACT_MODAL')" color="success">{{ $t('contact') }}</v-btn>
             </div>
           </div>
         </div>
@@ -360,6 +331,7 @@ export default {
   position: relative;
   width: 100%;
   max-width: 100vw;
+  min-height: 740px;
 
   &-title {
     font-size: 60px;
@@ -386,6 +358,7 @@ export default {
   }
 
   &-wrp {
+    min-height: 740px;
     height: 100vh;
     display: flex;
     padding: 80px 0 30px;

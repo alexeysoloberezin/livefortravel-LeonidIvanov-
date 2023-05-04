@@ -2,11 +2,21 @@ export const state = () => ({
   houses: [],
   loading: false,
   favoriteCount: null,
+  selectedInfo: {
+    period: null,
+    price: null,
+    hash: null,
+    houseName: null,
+  }
 })
 
 export const mutations = {
   setHouses(state, value) {
     state.houses = value
+  },
+  setSelectedInfo(state, value) {
+    console.log("V", value)
+    state.selectedInfo = value
   },
   setFavoriteCount(state, value){
     state.favoriteCount = value
