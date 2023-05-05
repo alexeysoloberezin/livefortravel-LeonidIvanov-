@@ -2,7 +2,7 @@
   <v-dialog v-model="showContactModal" :persistent="persistent" :max-width="maxWidth">
     <div class="white-bg pa-5" style="background: #fff">
       <h5 class="pb-4">{{ $t('OurContacts') }}</h5>
-      <div v-if="contacts" class="d-flex flex-wrap" style="grid-gap: 10px">
+      <div v-if="contacts" class="d-flex flex-wrap conta" style="grid-gap: 10px">
         <a target="_blank" v-if="contacts.Telegram" :href="`https://t.me/${contacts.Telegram}`" class="blockTab cursor-pointer">
           <div>
             <TelegramIcon/>
@@ -126,3 +126,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@media (max-width: 600px) {
+  .conta.d-flex{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    .blockTab{
+      min-width: 100%;
+      margin-bottom: 0;
+      padding: 13px;
+      &-title{
+        font-size: 16px;
+      }
+    }
+  }
+}
+</style>

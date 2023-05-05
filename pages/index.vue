@@ -163,7 +163,7 @@
               <div class="howWork-title">{{ $t('howWorkBx5Title') }}</div>
               <div class="howWork-text"> {{ $t('howWorkBx5Text') }}
               </div>
-              <v-btn target="_blank" href="https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/documents%2F%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20K4%20(5)%20(1).pdf?alt=media&token=3c969ddf-3327-4067-8298-71dbc115db16" color="white" outlined  class="mt-2">Пример договора</v-btn>
+              <v-btn target="_blank" href="https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/documents%2F%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20K4%20(5)%20(1).pdf?alt=media&token=3c969ddf-3327-4067-8298-71dbc115db16" color="white" outlined  class="mt-2">{{ $t('exampleDoc') }}</v-btn>
             </div>
           </div>
 
@@ -238,13 +238,14 @@ export default {
     return {
       settings: {
         "dots": false,
-        "focusOnSelect": true,
-        "infinite": false,
+        "infinite": true,
         "arrows": false,
         "speed": 750,
         "variableWidth": true,
         "centerPadding": "20px",
         "slidesToShow": 1,
+        draggable: true,
+        swipeToSlide: true,
         "slidesToScroll": 1,
         "touchThreshold": 5
       },

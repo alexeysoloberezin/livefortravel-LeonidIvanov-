@@ -116,6 +116,7 @@ export default {
       fallbackLocale: 'en',
       messages: {
         en: {
+          exampleDoc: 'contract example',
           lookHouses: 'View Houses',
           priceWarning: 'This amount calculator is a test, the price will be clarified before renting.',
           close: 'Close',
@@ -196,6 +197,7 @@ export default {
           distanceBeach: 'Distance to the beach',
         },
         ru: {
+          exampleDoc: 'Пример договора',
           priceWarning: 'Данный калькулятор суммы является тестовым, перед арендой цена будет уточнена.',
           video: 'Видео',
           close: 'Закрыть',
