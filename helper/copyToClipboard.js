@@ -17,3 +17,15 @@ export default function copyToClipboard(textToCopy){
 
   console.log('Текст скопирован в буфер обмена:', textToCopy);
 }
+
+
+//
+// function getMesasges(){
+//   const els = document.querySelectorAll('.message.spoilers-container')
+//   let res = ``
+//
+//   els.forEach((item, index) => res += `Text,object ${index + 1}: ${item.textContent} + \n==============\n`)
+//
+//   console.log(res)
+// }
+// getMesasges()

@@ -10,7 +10,7 @@
       </div>
     </template>
     <template v-else>
-      <div v-if="getHouse" class="mainHouse container">
+      <div v-if="getHouse" class="mainHouse">
         <div>
           <v-dialog v-model="galleryDialog" class="modalImages" :max-height="800" :max-width="1700">
             <v-carousel hide-delimiters cycle>
@@ -111,6 +111,9 @@
             </div>
             <div class="map" v-if="getHouse.info.locationPoint">
               <h5 class="py-5 mt-2">Location</h5>
+              <div v-if="getHouse.info.locationText" class="map-text mb-7">
+                <p v-for="text in getHouse.info.locationText">{{ text }}</p>
+              </div>
               <iframe :src="getHouse.info.locationPoint" width="600" height="450" style="border:0;" allowfullscreen=""
                       loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -451,6 +454,9 @@ export default {
 }
 
 .mainHouse {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
   &-block {
     padding: 30px 0 30px 0;
     border-bottom: 1px solid rgba(199, 199, 199, 0.4);
@@ -465,6 +471,12 @@ export default {
   }
 
   .map {
+    &-text{
+      color: #333;
+      opacity: 0.9;
+      font-weight: 300;
+      font-size: 15px;
+    }
     &, iframe {
       width: 100%;
       aspect-ratio: 16/9;

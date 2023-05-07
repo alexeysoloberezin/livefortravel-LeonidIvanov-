@@ -2,7 +2,7 @@
   <div>
     <div>
       <div class="firstBanner">
-        <div class="firstBanner-bg"><img :src="bannerArrMain.bg" alt=""></div>
+        <div class="firstBanner-bg"><v-img placeholder="plaeholderMain.jpg" :src="bannerArrMain.bg" alt=""></v-img></div>
         <div class="firstBanner-wrp">
           <div class="firstBanner-l">
             <div class="firstBanner-title" v-html="bannerArrMain.title"></div>
@@ -50,7 +50,7 @@
       <div class="container">
         <div class="about mt-6 mt-md-16">
           <div class="about-l">
-            <v-img aspect-ratio="3/2" src="landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise.jpg"
+            <v-img aspect-ratio="3/2"  src="landscape-of-morning-fog-and-mountains-with-hot-air-balloons-at-sunrise.jpg"
                    alt=""/>
             <v-img aspect-ratio="3/2"
                    src="https://firebasestorage.googleapis.com/v0/b/vue-main-42e70.appspot.com/o/C9%2Fphoto_5_2023-04-11_13-42-10.jpg?alt=media&token=7e3c5250-458d-494b-a68b-065ec5a4140f"
@@ -254,8 +254,8 @@ export default {
       bannerArrMain: {
         bg: 'szabolcs-toth-BE2T__AyThs-unsplash.jpg',
         title: 'Life <br>is Travel',
-        text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
-        btnText: 'Show',
+        text: 'Найди свой идеальный дом для жизни или отпуска на Бали.',
+        btnText: this.$t('lookHouses'),
         btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
       },
       bannersArr: [
@@ -381,7 +381,7 @@ export default {
     z-index: 1;
     left: 0;
 
-    img {
+    .v-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
