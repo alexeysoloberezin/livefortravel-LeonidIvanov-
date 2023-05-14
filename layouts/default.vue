@@ -19,7 +19,6 @@
     </div>
 
 
-
     <ContactModal
       :max-width="800"
     />
@@ -34,7 +33,7 @@
         <div class="d-flex align-center mx-0 mx-md-6">
           <!-- Left Content -->
           <router-link to="/" class="logo"><img style="width: 200px;height: auto;object-fit: contain"
-                                                :src="!whiteHeader ? 'Group 21.png' : 'logoWghite.png'"
+                                                :src="!whiteHeader ? 'logoBlack.png' : 'logoWghite.png'"
                                                 alt=""></router-link>
 
 
@@ -84,17 +83,22 @@
                   {{ $t('housesOnMap') }}
                 </router-link>
               </li>
+              <li v-if="isAdmin">
+                <router-link to="/admin/createPost">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>
+                      map-marker-multiple-outline</title>
+                      <path
+                        d="M11.5 9C11.5 7.62 12.62 6.5 14 6.5C15.1 6.5 16.03 7.21 16.37 8.19C16.45 8.45 16.5 8.72 16.5 9C16.5 10.38 15.38 11.5 14 11.5C12.91 11.5 12 10.81 11.64 9.84C11.55 9.58 11.5 9.29 11.5 9M5 9C5 13.5 10.08 19.66 11 20.81L10 22C10 22 3 14.25 3 9C3 5.83 5.11 3.15 8 2.29C6.16 3.94 5 6.33 5 9M14 2C17.86 2 21 5.13 21 9C21 14.25 14 22 14 22C14 22 7 14.25 7 9C7 5.13 10.14 2 14 2M14 4C11.24 4 9 6.24 9 9C9 10 9 12 14 18.71C19 12 19 10 19 9C19 6.24 16.76 4 14 4Z"/>
+                    </svg>
+                  </div>
+                  Создать пост
+                </router-link>
+              </li>
             </ul>
           </nav>
           <v-spacer></v-spacer>
 
-          <!--          <ul>-->
-          <!--            <li v-for="locale in $i18n.locales" :key="locale.code">-->
-          <!--              <button @click="$i18n.setLocale(locale.code);$moment.locale(locale.code)">-->
-          <!--                {{ locale.name }}-->
-          <!--              </button>-->
-          <!--            </li>-->
-          <!--          </ul>-->
           <LanguageCurrency :white="!!whiteHeader"/>
           <router-link to="/favorite">
 
@@ -118,12 +122,13 @@
             </v-icon>
           </v-btn>
 
-          <AppBarUserMenu></AppBarUserMenu>
+          <AppBarUserMenu v-if="user"></AppBarUserMenu>
         </div>
       </div>
     </div>
 
     <v-main :style="{marginTop: !whiteHeader ? '100px' : ''}">
+      {{ user }}
       <Nuxt/>
     </v-main>
 
@@ -228,6 +233,13 @@ export default {
 
   },
   mounted() {
+    if (this.$route.path.includes('/admin/')) {
+      if (!this.isAdmin) {
+        this.$router.push('/');
+      }
+    }
+
+
     this.setFavoriteCount()
     this.$store.dispatch('contacts/fetchContacts')
 
@@ -254,6 +266,12 @@ export default {
     pageRegister() {
       return this.$route.name === 'register'
     },
+    user() {
+      return this.$store.state.user
+    },
+    isAdmin() {
+      return this.$store.state.user?.email === "alexeysoloberezinsolo@gmail.com"
+    }
   }
 }
 </script>
@@ -298,7 +316,7 @@ export default {
     background: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
     //border-top: 3px solid #09d261;
-      a {
+    a {
       color: #333 !important;
     }
 
@@ -308,7 +326,8 @@ export default {
       align-items: center;
       padding: 0;
       grid-gap: 0;
-      li{
+
+      li {
         position: relative;
         padding: 7px 0 0 0;
         width: 100%;
@@ -319,16 +338,19 @@ export default {
         //  border: none;
         //}
       }
+
       svg {
         display: block !important;
         max-width: 26px;
         min-height: 25px;
         fill: #333;
       }
-      li>div{
+
+      li > div {
 
       }
-      li>a{
+
+      li > a {
         display: flex;
         width: 100%;
         flex-direction: column;

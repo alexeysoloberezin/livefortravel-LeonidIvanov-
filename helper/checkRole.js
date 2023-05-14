@@ -1,4 +1,4 @@
-const roles = [
+export const roles = [
   {
     email: 'alexeysoloberezinsolo@gmail.com',
     role: 'admin'

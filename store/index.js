@@ -9,6 +9,7 @@ export const state = () => ({
 })
 
 
+
 export const mutations = {
   ON_AUTH_STATE_CHANGED_MUTATION: (state, {authUser, claims}) => {
     if (authUser) {

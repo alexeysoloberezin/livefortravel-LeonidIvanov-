@@ -4,7 +4,9 @@ import 'firebase/compat/firestore'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  server: {
+    port: 3211
+  },
   ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -62,7 +64,7 @@ export default {
   },
 
   router: {
-    // middleware: ['auth']
+    middleware: 'router'
   },
 
   firebase: {
