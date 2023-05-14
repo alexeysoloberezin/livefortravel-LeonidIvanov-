@@ -128,18 +128,17 @@
     </div>
 
     <v-main :style="{marginTop: !whiteHeader ? '100px' : ''}">
-      {{ user }}
       <Nuxt/>
     </v-main>
 
     <div
-      class="px-0 py-4 footer mt-16"
+      class="px-0 py-4 footer mt-16 mb-md-0 mb-14"
     >
       <div class="w-full">
         <div class="mx-6 d-flex  align-center">
           <router-link to="/" class="logo">
             <img style="width: 200px;height: auto;object-fit: contain"
-                 src="Group 21.png"
+                 src="logoBlack.png"
                  alt="">
           </router-link>
           <nav class="nav">
@@ -318,6 +317,7 @@ export default {
     //border-top: 3px solid #09d261;
     a {
       color: #333 !important;
+      font-size: 13px !important;
     }
 
     ul {
@@ -341,8 +341,8 @@ export default {
 
       svg {
         display: block !important;
-        max-width: 26px;
-        min-height: 25px;
+        width: 26px;
+        height: 25px;
         fill: #333;
       }
 
