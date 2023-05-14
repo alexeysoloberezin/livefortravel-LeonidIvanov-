@@ -7,7 +7,7 @@
           <div class="firstBanner-l">
             <div class="firstBanner-title" v-html="bannerArrMain.title"></div>
             <div class="firstBanner-text">{{ bannerArrMain.text }}</div>
-            <v-btn color="success" class="firstBanner-btn" width="180px">{{
+            <v-btn color="success" href="/houses" class="firstBanner-btn" width="180px">{{
                 bannerArrMain.btnText
               }}
             </v-btn>
