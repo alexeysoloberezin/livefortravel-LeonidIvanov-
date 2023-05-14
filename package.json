@@ -1,10 +1,9 @@
 {
-  "name": "TestDeplay",
+  "name": "LiveForTravel",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "test": "jest",
     "deploy-db": "firebase taget:apply hosting vue-main vue-main-42e70 && cd ./output/server && rd /s /q node_modules && npm i && cd .. && firebase deploy",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -39,7 +38,6 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "firebase-admin": "^11.7.0",
     "firebase-functions": "^4.3.1",
-    "firebase-functions-test": "^3.1.0",
-    "vitest": "^0.31.0"
+    "firebase-functions-test": "^3.1.0"
   }
 }
