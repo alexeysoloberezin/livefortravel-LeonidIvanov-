@@ -260,39 +260,32 @@ export default {
       },
       bannersArr: [
         {
-          bg: '5695d7338d8c5e2eba2ffa3147250ca2.jpg',
+          bg: 'int1.png',
           title: 'Каталог домов',
           text: 'Добро пожаловать в наш каталог домов! Здесь вы найдете все, что нужно для того, чтобы выбрать идеальный дом для вашего отпуска.',
           btnText: 'Show',
           btnLink: '/houses'
         },
         {
-          bg: 'https://images.unsplash.com/photo-1538964173425-93884d739596?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+          bg: 'int2.png',
           title: 'Пляжи букита',
           text: ' Здесь вы найдете полезную информацию о самых популярных пляжах Букита. От красивых пейзажей и уединенных уголков до возможностей для серфинга и других видов активного отдыха - все это вы найдете на пляжах Букита.',
           btnText: 'Show',
           btnLink: '/beach'
         },
         {
-          bg: 'https://i.pinimg.com/564x/ea/1b/ed/ea1bed5065aadd208bea842c74d6e520.jpg',
+          bg: 'int3.png',
           title: 'Never stop exploring the world',
           text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
           btnText: 'Show',
-          btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
+          btnLink: ''
         },
         {
-          bg: 'brenda-godinez-k4116JZ07S0-unsplash.jpg',
+          bg: 'int4.png',
           title: 'Never stop exploring the world',
           text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
           btnText: 'Show',
           btnLink: '/houses'
-        },
-        {
-          bg: 'brenda-godinez-k4116JZ07S0-unspl (4).jpg',
-          title: 'Never stop exploring the world',
-          text: 'Download this Premium PSD File about Landing page design layout for travel website, and discover more than 48 Million',
-          btnText: 'Show',
-          btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
         },
       ]
     }

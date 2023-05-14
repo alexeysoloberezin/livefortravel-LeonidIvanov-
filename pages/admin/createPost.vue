@@ -63,6 +63,7 @@
           <v-btn color="error" outlined @click="clearAll">
             Clear all
           </v-btn>
+          <v-btn color="blue" @click="sendMessage">Send message</v-btn>
         </div>
       </div>
     </div>
@@ -156,6 +157,75 @@ export default {
       })
 
       return res
+    },
+    sendMessage() {
+      // const chatid = "-1001501742593";
+      const chatid = "-1001270949254";
+
+      const token = "6245643623:AAFA5v0rRv4gJxI-vDUh9p7QL3cw1bMaHkI";
+
+      function otpravka(token, chatid) {
+        axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
+          "chat_id": chatid,
+          "text": "Привет, есть жильё до 10млн на буките?"
+        })
+          .then(response => {
+            console.log('Success send', response)
+          })
+          .catch(error => {
+            console.error(error);
+            console.error(error.response);
+          })
+      };
+      // otpravka(token, chatid)
+
+      const apiId = "23339883";
+      const apiHash = 'e7927d4c8ccf8b8586450f880ada08c7';
+      const phoneNumber = '+6282123340433'; // ваш номер телефона
+
+      // const bot = new Telegraf(apiId + ':' + apiHash);
+      //
+      // bot.telegram.signIn({
+      //   phoneNumber: phoneNumber
+      // }).then(authData => {
+      //   // authData содержит информацию о процессе авторизации, включая важные данные, такие как user_id и user_hash.
+      //   console.log('Авторизация прошла успешно:', authData);
+      // }).catch(error => {
+      //   console.log('Ошибка авторизации:', error);
+      // });
+
+      const API_ID = "23339883";
+      const API_HASH = 'e7927d4c8ccf8b8586450f880ada08c7';
+      const PHONE_NUMBER = '+6282123340433';
+
+      axios.post(`https://api.telegram.org/bot${token}/auth.sendCode`, {
+        phone_number: PHONE_NUMBER,
+        current_number: false,
+        api_id: API_ID,
+        api_hash: API_HASH
+      })
+        .then((response) => {
+          console.log(response.data);
+          // Получаем хэш кода аутентификации из ответа и сохраняем его для последующих запросов
+          const phoneCodeHash = response.data.phone_code_hash;
+          console.log(phoneCodeHash)
+          // Затем отправляем запрос на проверку полученного кода аутентификации
+          // axios.post('https://api.telegram.org/bot<YOUR_BOT_TOKEN>/auth.signIn', {
+          //   phone_number: PHONE_NUMBER,
+          //   phone_code_hash: phoneCodeHash,
+          //   phone_code: 'YOUR_PHONE_CODE'
+          // })
+          //   .then((response) => {
+          //     console.log(response.data);
+          //     // Делаем что-то дальше с полученным токеном
+          //   })
+          //   .catch((error) => {
+          //     console.error(error.response.data);
+          //   });
+        })
+        .catch((error) => {
+          console.error(error.response.data);
+        });
     },
     sendPost() {
       this.blockSendPost = true
