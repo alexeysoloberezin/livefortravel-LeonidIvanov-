@@ -203,6 +203,7 @@ import TelegramIcon from "~/components/icon/TelegramIcon"
 import WpIcon from "~/components/icon/Wp"
 import InstagramIcon from "~/components/icon/Instagram"
 import FacebookIcon from "~/components/icon/FacebookIcon"
+import findText from "~/helper/aiFindText/main";
 
 export default {
   name: 'DefaultPage',
@@ -232,6 +233,30 @@ export default {
 
   },
   mounted() {
+    const text = `Аренда комнаты
+в 4х комнатном
+Guesthouse
+
+Контакты собственника @UbudB
+
+📍Район: Убуд, центр - 5 минут
+
+🌮Кухня: Общая
+🎯Рабочая зона: ДА
+🏊Бассейн: ДА
+
+💪Интернет - до 100 мб/сек
+
+💸Стоимость: 6,8 миллионов / месяц
+✅Включено: всё (кроме питьевой воды)
+
+https://maps.app.goo.gl/XoL7Y5gpydWJQHeh8?g_st=ic
+
+Контакты собственника @UbudB`;
+
+    const res = findText(text)
+    console.log(res)
+
     if (this.$route.path.includes('/admin/')) {
       if (!this.isAdmin) {
         this.$router.push('/');

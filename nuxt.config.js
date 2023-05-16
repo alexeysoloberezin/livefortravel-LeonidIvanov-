@@ -7,7 +7,7 @@ export default {
   server: {
     port: 3211
   },
-  ssr: false,
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
