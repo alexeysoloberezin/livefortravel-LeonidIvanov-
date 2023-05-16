@@ -104,7 +104,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ['vuejs-datepicker']
+    // vendor: ['vuejs-datepicker'],
+    publicPath: 'dist'
   },
 
 
