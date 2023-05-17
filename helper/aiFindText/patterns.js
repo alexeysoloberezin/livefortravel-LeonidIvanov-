@@ -7,28 +7,63 @@ export default function findValue(key, text) {
     case 'bathrooms':
       return getNumberOfRooms(text, patterns.bathrooms)
     case 'pool':
-      return hasPoolMention(text)
+      return hasWordsInAText(text, patterns.pool)
     case 'location':
       return findLocation(text)
+    case 'cleaning':
+      return hasWordsInAText(text, patterns.cleaning)
+    case 'garden':
+      return hasWordsInAText(text, patterns.garden)
+    case 'parking':
+      return hasWordsInAText(text, patterns.parking)
+    case 'available':
+      return findFreeDate(text, patterns.parking)
   }
 }
 
 const patterns = {
-  price: ['млн', 'mln', 'ml', 'мл', 'миллион',],
+  price: ['млн', 'mln', 'ml', 'мл', 'миллион', 'милл', 'мил', 'в мес'],
   rooms: [
-    'спален', 'комнат', 'спальн', 'bedroom', 'bedrooms', 'bed room', 'спален есть', 'спальные места', 'спальная мест', 'спальное место', 'спальни',
+    'спален', 'комнат', 'спальн', 'bedroom', ' -мя спал', 'х комн', '-мя спал', 'bedrooms', 'bed room', 'спален есть', 'спальные места', 'спальная мест', 'спальное место', 'спальни',
     'спальня', 'спальней', 'комнаты', 'комнат', 'room', 'rooms', 'bed', 'beds', 'спальнями', 'комнатой', 'комната', 'комнате', 'спальню', 'спальнёй',
     'спальнях', 'спальнее', 'спальному', 'спальнами'
   ],
   bathrooms: ["ванн", "bath"],
-  location: ['убуд', 'Букит', 'Чангу', 'Керобокан', 'Керабокан', 'Семиньяк'],
-  pool: ['бассе', 'бассейн', 'pool']
+  location: ['убуд', 'Букит', 'Чангу', 'Керобокан', 'Керабокан', 'Семиньяк', 'Umalas', 'Умалас', 'Куты', 'Кута'],
+  pool: ['бассе', 'бассейн', 'pool'],
+  cleaning: ['Уборк', 'cleaning'],
+  garden: ['Сад', 'сад', 'garden'],
+  parking: ['parking', 'гараж', 'паркин'],
 }
 
 function findPrice(text) {
   const priceRegex = new RegExp(`\\d+(\\.\\d+)?\\s*(${patterns.price.join('|')})`, 'gi');
   const matches = text.match(priceRegex);
-  return matches ? matches[0] : null;
+  if (matches) {
+    return matches[0]
+  } else {
+    const res = findPrice(text)
+    return res ? res : null;
+  }
+
+  function findPrice(text) {
+    const regex = /цена\D*(\d{1,3}(?:\.\d{3})+)/gi; // Регулярное выражение для поиска упоминаний цены
+    const matches = text.match(regex); // Находим все совпадения с регулярным выражением
+
+    if (matches && matches.length > 0) {
+      for (let i = 0; i < matches.length; i++) {
+        const priceText = matches[i].replace(/\s/g, '').replace(/\./g, ''); // Удаляем пробелы и точки
+        const priceMatch = priceText.match(/\d+/); // Находим числовое значение цены
+
+        if (priceMatch) {
+          // Извлекаем числовое значение цены
+          return parseFloat(priceMatch[0])
+        }
+      }
+    }
+
+    return null; // Если цена не найдена, возвращаем null
+  }
 }
 
 function getNumberOfRooms(text, pattern) {
@@ -40,8 +75,9 @@ function getNumberOfRooms(text, pattern) {
   return null;
 }
 
-function hasPoolMention(text) {
-  for (let pattern of patterns.pool) {
+
+function hasWordsInAText(text, patterns) {
+  for (let pattern of patterns) {
     if (text.toLowerCase().includes(pattern.toLowerCase())) {
       return true;
     }
@@ -63,3 +99,18 @@ function findLocation(text) {
 
   return foundWord;
 }
+
+function findFreeDate(text) {
+  const regex = /(\b\d{1,2}\s*(января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\b|\b\d{1,2}\.\d{1,2}\b)/g;
+  const matches = text.match(regex);
+
+  if (matches && matches.length > 0) {
+    return matches[0];
+  } else if (text.includes('свободна') || text.includes('доступна')) {
+    return 'Available';
+  } else {
+    return 'Available';
+  }
+
+}
+
