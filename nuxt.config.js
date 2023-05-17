@@ -14,7 +14,7 @@ export default {
     titleTemplate: 'Live For Travel - Дома на Бали',
     title: 'Live For Travel - Дома на Бали',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ru',
     },
     meta: [
       { charset: 'utf-8' },
@@ -105,7 +105,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // vendor: ['vuejs-datepicker'],
-    publicPath: 'dist'
+    publicPath: 'dist',
+    buildDir: 'dist'
   },
 
 
