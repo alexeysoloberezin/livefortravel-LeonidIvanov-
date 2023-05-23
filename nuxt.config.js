@@ -7,7 +7,7 @@ export default {
   server: {
     port: 3211
   },
-  ssr: false,
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,7 +18,8 @@ export default {
     },
     meta: [
       {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+
+      {name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0'},
       {
         hid: 'description',
         name: 'description',
@@ -30,7 +31,10 @@ export default {
         content: 'аренда жилья, аренда домов, жилье на Бали, дома на Бали, аренда недвижимости на Бали, Букит, аренда вилл на Бали, балийская архитектура, пляжный дом, роскошные виллы, эксклюзивные апартаменты, бунгало на Бали, балийский стиль, туристическое жилье, панорамный вид, приватные виллы, релаксация на Бали, туристический район, экзотический отдых, отпуск на Бали, роскошь и комфорт, Бали, Индонезия'
       }
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
+    link: [
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'canonical', type: 'image/x-icon', href: 'https://www.livefortravel.info'},
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
