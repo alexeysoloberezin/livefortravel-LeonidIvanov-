@@ -204,6 +204,7 @@ import WpIcon from "~/components/icon/Wp"
 import InstagramIcon from "~/components/icon/Instagram"
 import FacebookIcon from "~/components/icon/FacebookIcon"
 import findText from "~/helper/aiFindText/main";
+import getInfo from "~/helper/getInfo";
 
 export default {
   name: 'DefaultPage',
@@ -324,11 +325,12 @@ export default {
 
 Свободна с 24.05`];
 
+    getInfo(this.$fire, this.$moment, this.$route.query?.t)
 
-    text.forEach(item => {
-      const res = findText(item)
-      console.log(res)
-    })
+    // text.forEach(item => {
+    //   const res = findText(item)
+    //   console.log(res)
+    // })
 
 
     if (this.$route.path.includes('/admin/')) {
