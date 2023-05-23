@@ -17,12 +17,20 @@ export default {
       lang: 'ru',
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Аренда жилья на Бали: уникальная возможность арендовать красивые виллы, апартаменты и коттеджи на прекрасном острове Бали. Наша компания предлагает широкий выбор недвижимости для отдыха и долгосрочной аренды. Погрузитесь в атмосферу рая, насладитесь прекрасными пляжами, экзотической природой и уникальной культурой Бали. Бронируйте прямо сейчас и создайте незабываемые впечатления!'
+      },
+      {name: 'format-detection', content: 'telephone=no'},
+      {
+        name: 'keywords',
+        content: 'аренда жилья, аренда домов, жилье на Бали, дома на Бали, аренда недвижимости на Бали, Букит, аренда вилл на Бали, балийская архитектура, пляжный дом, роскошные виллы, эксклюзивные апартаменты, бунгало на Бали, балийский стиль, туристическое жилье, панорамный вид, приватные виллы, релаксация на Бали, туристический район, экзотический отдых, отпуск на Бали, роскошь и комфорт, Бали, Индонезия'
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -34,10 +42,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/head.js', mode: 'client' },
-    { src: '~/plugins/vuetify.js', mode: 'client' },
+    {src: '~/plugins/head.js', mode: 'client'},
+    {src: '~/plugins/vuetify.js', mode: 'client'},
     // { src: '~/plugins/VuetifyDaterangePicker.js', mode: 'client' },
-    { src: '~/plugins/moment.js' },
+    {src: '~/plugins/moment.js'},
   ],
 
 
@@ -112,14 +120,19 @@ export default {
 
   i18n: {
     locales: [
-      { code: 'en', name: 'English' },
-      { code: 'ru', name: 'Русский' },
+      {code: 'en', name: 'English'},
+      {code: 'ru', name: 'Русский'},
     ],
     defaultLocale: 'en',
     vueI18n: {
       fallbackLocale: 'en',
       messages: {
         en: {
+          beachBukit: 'Beaches of Bukit',
+          beachBukitText: 'Here you will find useful information about the most popular beaches in Bukit. From beautiful landscapes and secluded corners to opportunities for surfing and other types of active recreation - you will find it all on the beaches of Bukit.',
+          houseCatalog: 'House Catalog',
+          houseCatalogText: 'Welcome to our house catalog! Here you will find everything you need to choose the perfect house for your vacation.',
+          titleDesc: 'Find your real home to live or vacation in Bali.',
           exampleDoc: 'contract example',
           lookHouses: 'View Houses',
           priceWarning: 'This amount calculator is a test, the price will be clarified before renting.',
@@ -201,6 +214,11 @@ export default {
           distanceBeach: 'Distance to the beach',
         },
         ru: {
+          beachBukit: 'Пляжи букита',
+          beachBukitText: 'Здесь вы найдете полезную информацию о самых популярных пляжах Букита. От красивых пейзажей и уединенных уголков до возможностей для серфинга и других видов активного отдыха - все это вы найдете на пляжах Букита.',
+          houseCatalog: 'Каталог домов',
+          houseCatalogText: 'Добро пожаловать в наш каталог домов! Здесь вы найдете все, что нужно для того, чтобы выбрать идеальный дом для вашего отпуска.',
+          titleDesc: 'Найди свой идеальный дом для жизни или отпуска на Бали.',
           exampleDoc: 'Пример договора',
           priceWarning: 'Данный калькулятор суммы является тестовым, перед арендой цена будет уточнена.',
           video: 'Видео',
@@ -232,10 +250,10 @@ export default {
           WhatWDYou3Title: 'Чистота',
           WhatWDYou3Text: 'Мы предлагаем профессиональную уборку, используя экологически чистые\n' +
             '              средства и методы, чтобы ваш дом был идеально чистым и комфортным для проживания.',
-          WhatWDYou4Title: 'Quick response',
+          WhatWDYou4Title: 'Быстрый ответ',
           WhatWDYou4Text: 'Мы понимаем важность своевременной коммуникации, поэтому всегда быстро\n' +
             '              отвечаем на ваши сообщения и запросы. Вы можете рассчитывать на нас, когда вам нужно.',
-          WhatWDYou5Title: 'Ensure Your Satisfaction',
+          WhatWDYou5Title: 'Убедимся, что вы удовлетворены',
           WhatWDYou5Text: 'Наша главная цель - ваше удовлетворение. Мы тесно сотрудничаем с вами, чтобы\n' +
             '              понимать ваши потребности и предпочтения, и стремимся достичь результатов, превышающих ваши ожидания.\n',
 

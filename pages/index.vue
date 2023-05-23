@@ -254,22 +254,22 @@ export default {
       bannerArrMain: {
         bg: 'szabolcs-toth-BE2T__AyThs-unsplash.jpg',
         title: 'Life <br>is Travel',
-        text: 'Найди свой идеальный дом для жизни или отпуска на Бали.',
+        text: this.$t('titleDesc'),
         btnText: this.$t('lookHouses'),
         btnLink: 'https://ru.pinterest.com/pin/448952656620921015/'
       },
       bannersArr: [
         {
           bg: 'int1.png',
-          title: 'Каталог домов',
-          text: 'Добро пожаловать в наш каталог домов! Здесь вы найдете все, что нужно для того, чтобы выбрать идеальный дом для вашего отпуска.',
+          title: this.$t('houseCatalog'),
+          text: this.$t('houseCatalogText'),
           btnText: 'Show',
           btnLink: '/houses'
         },
         {
           bg: 'int2.png',
-          title: 'Пляжи букита',
-          text: ' Здесь вы найдете полезную информацию о самых популярных пляжах Букита. От красивых пейзажей и уединенных уголков до возможностей для серфинга и других видов активного отдыха - все это вы найдете на пляжах Букита.',
+          title: this.$t('beachBukit'),
+          text: this.$t('beachBukitText'),
           btnText: 'Show',
           btnLink: '/beach'
         },

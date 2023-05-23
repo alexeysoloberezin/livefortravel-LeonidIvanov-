@@ -41,7 +41,7 @@ export const getMessages = `
   if(text && imgsRes.length > 0){
     const ss = {
       imgs: imgsRes,
-      text: text.textContent,
+      text: text.textContent.replace(/\\./g, '.<br>'),
       link: link ? link.href : null,
       ava: ava ? ava.src : null,
       linkUser: linkUser ? linkUser.href : null,
