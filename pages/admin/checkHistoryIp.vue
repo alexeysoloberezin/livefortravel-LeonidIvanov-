@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     replaceDate(date){
-      return this.$moment.utc(date).format('LL')
+      return this.$moment.utc(date).format('LLL')
     },
     async getInfo(){
       const snapshot = await this.$fire.firestore.collection('ipUsers').get()
