@@ -1,4 +1,7 @@
 export default function getInfo(fire, moment, keyFrom){
+  const isLocalhost = window.location.hostname === "localhost";
+  if(isLocalhost) return  console.log('localhost')
+
   let date = localStorage.getItem('ipUsed')
   date = date ? JSON.parse(date) : null
   if(date){
