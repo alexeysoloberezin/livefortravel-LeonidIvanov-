@@ -32,6 +32,8 @@ export default function getInfo(fire, moment, keyFrom){
           .then(response => response.json())
           .then(data => {
             console.log(data);
+            data = data || {}
+
             fire.firestore.collection('ipUsers').add({...data, ip: ipAddress, from: keyFrom}).then(() => {
               localStorage.setItem('ipUsed', JSON.stringify(new Date))
             })
