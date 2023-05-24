@@ -1,4 +1,4 @@
-export default function getInfo(fire, moment, keyFrom){
+export default function getInfo(fire, moment, keyFrom = ''){
   const isLocalhost = window.location.hostname === "localhost";
   if(isLocalhost) return  console.log('localhost')
 
@@ -34,12 +34,16 @@ export default function getInfo(fire, moment, keyFrom){
             console.log(data);
             data = data || {}
 
+            console.log('data', data)
+
             fire.firestore.collection('ipUsers').add({...data, ip: ipAddress, from: keyFrom}).then(() => {
               localStorage.setItem('ipUsed', JSON.stringify(new Date))
             })
 
           })
           .catch(error => {
+            console.log("ip", ipAddress)
+            console.log("keyFrom", keyFrom)
             fire.firestore.collection('ipUsers').add({ip: ipAddress, from: keyFrom}).then(() => {
               localStorage.setItem('ipUsed', JSON.stringify(new Date))
             })
