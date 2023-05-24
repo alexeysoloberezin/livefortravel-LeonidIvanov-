@@ -339,7 +339,7 @@ export default {
 
 Свободна с 24.05`];
 
-    getInfo(this.$fire, this.$moment, this.$route.query?.t)
+    getInfo(this.$fire, this.$moment, this.$route.query?.t, this.$moment())
 
     // text.forEach(item => {
     //   const res = findText(item)
