@@ -1,9 +1,10 @@
 export default function getInfo(fire, moment, keyFrom = ''){
-  const isLocalhost = window.location.hostname === "localhost";
-  if(isLocalhost) return  console.log('localhost')
-
-  let date = localStorage.getItem('ipUsed')
-  date = date ? JSON.parse(date) : null
+  // const isLocalhost = window.location.hostname === "localhost";
+  // if(isLocalhost) return  console.log('localhost')
+  //
+  // let date = localStorage.getItem('ipUsed')
+  // date = date ? JSON.parse(date) : null
+  const date = null
   if(date){
     const currentDateTime = moment();
 
@@ -28,27 +29,9 @@ export default function getInfo(fire, moment, keyFrom = ''){
     .then(data => {
       const ipAddress = data.ip;
       if(ipAddress){
-        fetch('http://ip-api.com/json/' + ipAddress)
-          .then(response => response.json())
-          .then(data => {
-            console.log(data);
-            data = data || {}
-
-            console.log('data', data)
-
-            fire.firestore.collection('ipUsers').add({...data, ip: ipAddress, from: keyFrom}).then(() => {
-              localStorage.setItem('ipUsed', JSON.stringify(new Date))
-            })
-
-          })
-          .catch(error => {
-            console.log("ip", ipAddress)
-            console.log("keyFrom", keyFrom)
-            fire.firestore.collection('ipUsers').add({ip: ipAddress, from: keyFrom}).then(() => {
-              localStorage.setItem('ipUsed', JSON.stringify(new Date))
-            })
-            console.error('Error:', error);
-          });
+        fire.firestore.collection('ipUsers').add({ip: ipAddress, from: keyFrom}).then(() => {
+          localStorage.setItem('ipUsed', JSON.stringify(new Date))
+        })
       }
 
     })
