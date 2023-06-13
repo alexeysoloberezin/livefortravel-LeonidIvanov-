@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app>
+    <v-app v-if="false">
       <div class="bg">
         <div class="area">
           <ul class="circles">
@@ -206,6 +206,7 @@
         </div>
       </div>
     </v-app>
+    <div class="cloased"><h1>Сайт оффлайн на 2 дня</h1></div>
   </div>
 </template>
 
@@ -511,5 +512,19 @@ export default {
 .footer {
   position: relative;
   border-top: 1px solid rgba(173, 173, 173, 0.3);
+}
+
+.cloased{
+  background: #071317;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.cloased h1{
+  color: #fff !important;
 }
 </style>

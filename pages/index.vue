@@ -4,7 +4,7 @@
       <div class="firstBanner">
         <div class="firstBanner-bg"><v-img placeholder="plaeholderMain.jpg" :src="bannerArrMain.bg" alt=""></v-img></div>
         <div class="firstBanner-wrp">
-          <div class="firstBanner-l">
+          <div class="fir stBanner-l">
             <div class="firstBanner-title" v-html="bannerArrMain.title"></div>
             <div class="firstBanner-text">{{ bannerArrMain.text }}</div>
             <v-btn color="success" href="/houses" class="firstBanner-btn" width="180px">{{
@@ -70,7 +70,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="whatWeDo container my-16 py-md-16 py-0">
         <div class="whatWeDo-r">
