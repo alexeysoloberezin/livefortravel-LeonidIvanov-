@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app v-if="false">
+    <v-app v-if="true">
       <div class="bg">
         <div class="area">
           <ul class="circles">
